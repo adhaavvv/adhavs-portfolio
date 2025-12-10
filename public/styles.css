@@ -1,0 +1,507 @@
+@font-face {
+    font-family: "Kindergarten";
+    src: url("/fonts/kindergarten.ttf") format("truetype");
+  }
+
+@font-face {
+    font-family: "Helvetica Neue";
+    src: url("/fonts/HelveticaNeueRoman.otf") format("opentype");
+  }
+
+
+body {
+    font-family: "Helvetica Neue"/*system-ui, sans-serif*/;
+    margin: 0;
+    padding: 0;
+    background: #0f0f10;
+    color: #f5f5f5;
+  }
+  
+  h1 {
+    font-family: "Kindergarten";
+    font-size: 3rem;
+  }
+
+  .logo-img {
+    height: auto;
+    width: 35px;      
+    margin-left: 10px; 
+  }
+  
+  
+  .custom-nav {
+    background-color: #f4f5e1;
+    box-shadow: 0 15px 9px rgba(0,0,0,0.4);
+    font-family: "Kindergarten";
+    font-size: 30px;
+  }
+  
+.nav-item {
+    color: #3c3d4b;
+}
+
+.paper-wallpaper {
+  height: 100vh; /* full screen height */
+  background-image: url('/images/crumpled-paper2.png'); /* your wallpaper path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center; /* vertically center */
+  padding-left: 50px; /* control the left offset */
+}
+
+.coding-wallpaper {
+  height: 100vh;
+  background-image: url('/images/YCLP.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  align-items: flex-end;
+  padding-left: 0;
+  justify-content: center;
+
+  position: relative;
+  overflow: hidden;
+}
+
+.coding-wallpaper > div {
+  text-align: center;
+  max-width: 1000px;
+  padding: 0 30px;
+}
+
+/* Ensure heading stays above the overlay */
+.coding-wallpaper h1 {
+  position: relative;
+  z-index: 2;           /* bring text above shadow layer */
+  color: white;        /* ensure visibility */
+  margin-bottom: 20px; /* space from bottom */
+  font-size: 100px;
+}
+.coding-wallpaper p {
+  position: relative;
+  z-index: 2;           /* bring text above shadow layer */
+  color: white;        /* ensure visibility */
+  margin-bottom: 60px; /* space from bottom */
+  font-size: 30px;
+}
+
+/* Bottom fade overlay */
+.coding-wallpaper::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  width: 100%;
+  height: 700px;
+
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 1),
+    rgba(0, 0, 0, 0)
+  );
+
+  z-index: 1; /* place it BELOW the text */
+}
+
+
+.project-wallpaper {
+  height: 80vh; /* full screen height */
+  background-color: #f4f5e1;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center; /* vertically center */
+  padding-left: 50px; /* control the left offset */
+}
+
+
+.paper-wallpaper-content {
+    text-align: left;
+}
+
+/* Show dropdown on hover (desktop) */
+.navbar .dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* Optional: keep alignment nice */
+.navbar .dropdown-menu {
+  margin-top: 0;
+}
+
+/* Remove the default Bootstrap dropdown arrow */
+.navbar .dropdown-toggle::after {
+  display: none !important;
+}
+
+.carousel-img {
+  border-radius: 25px;
+  border-style: solid;
+  border-width: 6.5px;
+  border-color: #3c3d4b;
+  /* box-shadow: 10px 10px 10px rgba(0,0,0,0.5); */
+  height: 450px;        /* adjust to your liking */
+  object-fit: cover;    /* keeps proportion while filling */
+}
+
+/* CLICKABLE CARD */
+.project-card {
+  width: 450px;
+  height: 300px;
+  border-radius: 20px;
+  background: #ddd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.project-card:hover {
+  transform: scale(1.03);
+}
+
+/* ===== MODAL ===== */
+
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  
+  background: rgba(0,0,0,0.7);
+
+  justify-content: center;
+  align-items: center;
+
+  z-index: 9999; 
+}
+
+
+.modal-box {
+  width: 80vw;
+  height: 90vh;
+  max-width: 1920px;
+
+  background: #ffebfd;
+  color: #3C3D4B;
+  border-radius: 25px;
+  padding: 30px;
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+  animation: popIn 0.2s ease;
+}
+
+@keyframes popIn {
+  from { transform: scale(0.9); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}
+
+/* Close Button */
+.close-btn {
+  position: absolute;
+  top: 5px;
+  right: 15.5px;
+  border: none;
+  background: transparent;
+  font-size: 32px;
+  cursor: pointer;
+}
+
+/* Layout */
+.modal-content {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) 1fr;
+  gap: 30px;
+
+  height: calc(100% - 110px); /* leaves space for snapshot gallery */
+  align-items: center;
+}
+
+/* LEFT VIDEO */
+.modal-video {
+  width: 100%;
+  max-height: 100%;
+  aspect-ratio: 1920 / 910;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-video video {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+
+  border-radius: 18px;
+  object-fit: contain;
+  background: black;
+
+  accent-color: #3c3d4b;
+}
+
+.modal-info {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+/* TEXT PANEL */
+.modal-info h1 {
+  margin-top: 0;
+  font-size: 42px;
+}
+
+.modal-description {
+  font-size: 16px;
+  margin: 15px 0;
+}
+
+.modal-tech {
+  margin: 10px 0;
+}
+
+/* COLOR PALETTE DOTS */
+.palette-row {
+  display: flex;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.color-dot {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 1px solid #000;
+}
+
+/* SNAPSHOT GALLERY */
+.modal-gallery {
+  height: 100px;
+  min-height: 100px;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  overflow-x: auto;
+  padding-top: 10px;
+  border-top: 2px solid rgba(0,0,0,0.1);
+}
+
+.modal-gallery img {
+  height: 100%;
+  max-height: 90px;
+  aspect-ratio: 16/9;
+
+  border-radius: 12px;
+  object-fit: cover;
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+.modal-gallery img:hover {
+  transform: scale(1.05);
+}
+
+/* Buttons */
+
+.btn {
+  display: inline-block;
+  margin-top: 15px;
+
+  background: black;
+  color: white;
+  padding: 10px 16px;
+
+  border-radius: 10px;
+  text-decoration: none;
+}
+
+/* ========================
+   LIGHTBOX VIEWER
+======================== */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.95);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+}
+
+.lightbox img {
+  max-width: 90vw;
+  max-height: 90vh;
+  border-radius: 12px;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 25px;
+  right: 30px;
+  font-size: 40px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: white;
+}
+
+/* arrows */
+.nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 60px;
+  background: none;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.nav.prev {
+  left: 40px;
+}
+
+.nav.next {
+  right: 40px;
+}
+
+
+/* ============ SHARED SECTION STYLE ============ */
+
+section {
+  padding: 80px 100px;
+  color: #3c3d4b;
+}
+
+h2 {
+  font-family: Kindergarten;
+  font-size: 48px;
+  margin-bottom: 30px;
+}
+
+/* ============ WHO I AM ============ */
+
+.about-section {
+  background-color: #f4f5e1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+.about-text {
+  max-width: 600px;
+  font-size: 20px;
+}
+
+.about-image img {
+  width: 250px;
+  border-radius: 20px;
+}
+
+/* ========================
+   JOURNEY TIMELINE STYLE
+======================== */
+
+.journey-section {
+  background-color: #ffebfd;
+  position: relative;
+  padding-left: 120px;
+}
+
+/* Vertical line */
+.journey-section::before {
+  content: "";
+  position: absolute;
+  left: 60px;
+  top: 120px;
+  bottom: 60px;
+  width: 4px;
+  background: #3c3d4b;
+  border-radius: 10px;
+}
+
+.journey-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+  margin-bottom: 50px;
+  position: relative;
+}
+
+/* Dot bubble */
+.journey-dot {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #f4f5e1;
+  border: 4px solid #3c3d4b;
+  flex-shrink: 0;
+  position: relative;
+  left: 0px;
+  bottom: -40px
+}
+
+/* Content card */
+.journey-content {
+  background: white;
+  padding: 20px 25px;
+  border-radius: 18px;
+  box-shadow: 6px 6px 0px rgba(0,0,0,0.15);
+  max-width: 550px;
+}
+
+.journey-content h4 {
+  font-size: 28px;
+  margin: 0 0 8px 0;
+}
+
+
+/* ============ SKILLS ============ */
+
+.skills-row {
+  display: flex;
+  gap: 30px;
+}
+
+.skill-card {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: white;
+  border: 3px solid #3c3d4b;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-weight: bold;
+}
+
+/* ============ FUN FACTS ============ */
+
+.funfacts-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.funfacts-section li {
+  font-size: 18px;
+  margin-bottom: 12px;
+}
