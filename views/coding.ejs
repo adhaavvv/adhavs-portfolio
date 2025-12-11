@@ -48,10 +48,9 @@
 <section class="coding-wallpaper">
             <div>
             <h1>My Coding Projects </h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed 
-                do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                 Ut enim ad minim veniam, quis nostrud exercitation ullamco 
-                laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <p>Here are the coding projects that define my journey as an aspiring web and app developer. 
+              From classroom challenges to personal experiments, each project highlights what I’ve learned and how I continue to grow in the world of tech.<br>
+            Click on the images of the project to read more.</p>
             </div>
           </section>
   
@@ -60,9 +59,9 @@
             <%- include("components/projectCarousel", {
               id: "codingCarousel",
               images: [
-                "/images/placeholder.png",
-                "/images/placeholder2.jpg",
-                "/images/placeholder3.png"
+                "/images/macromate.png",
+                "/images/macromate2.png",
+                "/images/macromate3.png"
               ],
               modalTarget: "codingModal"
             }) %>
@@ -70,13 +69,35 @@
           
             <div style="margin-left: 50px; color:#3c3d4b">
               <h1 style="font-family: Kindergarten; font-size:70px; font-weight:bold">
-                  My Coding Projects
+                  MacroMate
               </h1>
               <p style="max-width:600px; font-size:20px;">
-                Lorem ipsum placeholder copy here.
+                A BMI calculator and calorie-allocation app that lets users log daily food intake with optional photo entries.
               </p>
             </div>
-          
+
+            </section>
+            <section class="project-wallpaper">
+            <!-- GPA TRACKER CAROUSEL -->
+            <%- include("components/projectCarousel", {
+              id: "gpaCarousel",
+              images: [
+                "/images/gpa-tracker.png",
+                "/images/gpa-tracker2.png",
+                "/images/gpa-tracker3.png"
+              ],
+              modalTarget: "gpaModal"
+            }) %>
+
+            <div style="margin-left: 50px; color:#3c3d4b">
+              <h1 style="font-family: Kindergarten; font-size:70px; font-weight:bold">
+                  GPA Tracker
+              </h1>
+              <p style="max-width:600px; font-size:20px;">
+                A simple GPA tracking web app built with Node.js and EJS.
+              </p>
+            </div>
+
           </section>
           
           
@@ -88,7 +109,7 @@
             title: "MacroMate",
           
             description:
-              "A sustainability tracker letting users log eco purchases and visualize CO₂e savings through chart dashboards.",
+              "A comprehensive health-tracking program that calculates the user’s BMI and recommends a personalized daily calorie target. It also functions as a food-logging diary, allowing users to record meals, monitor nutritional habits, and upload photos for visual tracking and improved accuracy.",
           
             tech:
               "HTML, CSS, JavaScript, Node.js, EJS",
@@ -107,7 +128,34 @@
               "/images/macromate3.png"
             ]
           }) %>
-          
+
+          <!-- GPA TRACKER MODAL -->
+          <%- include("components/projectModal", {
+            id: "gpaModal",
+
+            demoVideo: "/videos/gpa-tracker.mp4",
+
+            title: "GPA Tracker",
+
+            description:
+              "A web application that helps students calculate module grades and projected GPA. Built with Node.js and EJS.",
+
+            tech:
+              "HTML, CSS, JavaScript, Node.js, EJS",
+
+            palette: [
+              "#1e3a8a",
+              "#60a5fa",
+              "#facc15",
+              "#26b67b",
+            ],
+
+            snapshots: [
+              "/images/gpa-tracker.png",
+              "/images/gpa-tracker2.png",
+              "/images/gpa-tracker3.png"
+            ]
+          }) %>          
           
           <script>
           function openModal(id) {
