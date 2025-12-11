@@ -1,179 +1,404 @@
-<!-- coding.ejs -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="icon" type="image/png" href="/images/favicon.png" />
-    <title>Adhav's Portfolio</title>
-    <link
+  <link rel="icon" type="image/png" href="/images/favicon.png" />
+  <title>Adhav's Portfolio</title>
+
+  <link
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
     rel="stylesheet"
   />
-  
+
   <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
   </script>
-  
-  <meta charset="UTF-8">
+
+  <meta charset="UTF-8" />
   <title>Adhav’s Portfolio</title>
-  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/styles.css" />
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg custom-nav">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="/" style="margin-right: 100;">
-                <img src="/images/logo.png" alt="Adhav Logo" class="logo-img">
-              </a>              
-              
-            <div class="collapse navbar-collapse" id="navbarNav" style="margin-left: 100">
-              <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link" href="#">About</a></li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="projectsDropdown"
-                     role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Projects
-                  </a>
-                  <ul class="dropdown-menu" aria-labelledby="projectsDropdown">
-                    <li><a class="dropdown-item" href="/coding">Coding</a></li>
-                    <li><a class="dropdown-item" href="#design">Design</a></li>
-                  </ul>
-                </li>
-                
-                <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
-              </ul>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg custom-nav">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/" style="margin-right: 100;">
+        <img src="/images/logo.png" alt="Adhav Logo" class="logo-img" />
+      </a>
+
+      <div class="collapse navbar-collapse" id="navbarNav" style="margin-left: 100">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="projectsDropdown"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Projects
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="projectsDropdown">
+              <!-- If /coding doesn’t work on Vercel, change this href to "/coding.html" -->
+              <li><a class="dropdown-item" href="/coding">Coding</a></li>
+              <li><a class="dropdown-item" href="#design">Design</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HEADER SECTION -->
+  <section class="coding-wallpaper">
+    <div>
+      <h1>My Coding Projects</h1>
+      <p>
+        Here are the coding projects that define my journey as an aspiring web and app
+        developer. From classroom challenges to personal experiments, each project
+        highlights what I’ve learned and how I continue to grow in the world of tech.<br />
+        Click on the images of the project to read more.
+      </p>
+    </div>
+  </section>
+
+  <!-- ========================= -->
+  <!--        MACROMATE         -->
+  <!-- ========================= -->
+  <section class="project-wallpaper">
+    <!-- MACROMATE CAROUSEL -->
+    <div
+      id="codingCarousel"
+      class="carousel slide"
+      data-bs-ride="carousel"
+      style="margin-right: 10px;"
+    >
+      <!-- Indicators -->
+      <div class="carousel-indicators">
+        <button
+          type="button"
+          data-bs-target="#codingCarousel"
+          data-bs-slide-to="0"
+          class="active"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#codingCarousel"
+          data-bs-slide-to="1"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#codingCarousel"
+          data-bs-slide-to="2"
+        ></button>
+      </div>
+
+      <!-- Slides -->
+      <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="5000">
+          <img
+            src="/images/macromate.png"
+            class="d-block w-100 carousel-img"
+            style="cursor: pointer;"
+            onclick="openModal('codingModal')"
+            alt="MacroMate Screenshot 1"
+          />
+        </div>
+        <div class="carousel-item" data-bs-interval="5000">
+          <img
+            src="/images/macromate2.png"
+            class="d-block w-100 carousel-img"
+            style="cursor: pointer;"
+            onclick="openModal('codingModal')"
+            alt="MacroMate Screenshot 2"
+          />
+        </div>
+        <div class="carousel-item" data-bs-interval="5000">
+          <img
+            src="/images/macromate3.png"
+            class="d-block w-100 carousel-img"
+            style="cursor: pointer;"
+            onclick="openModal('codingModal')"
+            alt="MacroMate Screenshot 3"
+          />
+        </div>
+      </div>
+
+      <!-- Controls -->
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#codingCarousel"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#codingCarousel"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+
+    <!-- MACROMATE TEXT -->
+    <div style="margin-left: 50px; color: #3c3d4b;">
+      <h1 style="font-family: Kindergarten; font-size: 70px; font-weight: bold;">
+        MacroMate
+      </h1>
+      <p style="max-width: 600px; font-size: 20px;">
+        A BMI calculator and calorie-allocation app that lets users log daily food intake
+        with optional photo entries.
+      </p>
+    </div>
+  </section>
+
+  <!-- ========================= -->
+  <!--       GPA TRACKER        -->
+  <!-- ========================= -->
+  <section class="project-wallpaper">
+    <!-- GPA TRACKER CAROUSEL -->
+    <div
+      id="gpaCarousel"
+      class="carousel slide"
+      data-bs-ride="carousel"
+      style="margin-right: 10px;"
+    >
+      <!-- Indicators -->
+      <div class="carousel-indicators">
+        <button
+          type="button"
+          data-bs-target="#gpaCarousel"
+          data-bs-slide-to="0"
+          class="active"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#gpaCarousel"
+          data-bs-slide-to="1"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#gpaCarousel"
+          data-bs-slide-to="2"
+        ></button>
+      </div>
+
+      <!-- Slides -->
+      <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="5000">
+          <img
+            src="/images/gpa-tracker.png"
+            class="d-block w-100 carousel-img"
+            style="cursor: pointer;"
+            onclick="openModal('gpaModal')"
+            alt="GPA Tracker Screenshot 1"
+          />
+        </div>
+        <div class="carousel-item" data-bs-interval="5000">
+          <img
+            src="/images/gpa-tracker2.png"
+            class="d-block w-100 carousel-img"
+            style="cursor: pointer;"
+            onclick="openModal('gpaModal')"
+            alt="GPA Tracker Screenshot 2"
+          />
+        </div>
+        <div class="carousel-item" data-bs-interval="5000">
+          <img
+            src="/images/gpa-tracker3.png"
+            class="d-block w-100 carousel-img"
+            style="cursor: pointer;"
+            onclick="openModal('gpaModal')"
+            alt="GPA Tracker Screenshot 3"
+          />
+        </div>
+      </div>
+
+      <!-- Controls -->
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#gpaCarousel"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#gpaCarousel"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+
+    <!-- GPA TRACKER TEXT -->
+    <div style="margin-left: 50px; color: #3c3d4b;">
+      <h1 style="font-family: Kindergarten; font-size: 70px; font-weight: bold;">
+        GPA Tracker
+      </h1>
+      <p style="max-width: 600px; font-size: 20px;">
+        A simple GPA tracking web app built with Node.js and EJS.
+      </p>
+    </div>
+  </section>
+
+  <!-- ========================= -->
+  <!--       MACROMATE MODAL    -->
+  <!-- ========================= -->
+  <div
+    id="codingModal"
+    class="modal-overlay"
+    onclick="closeModal(event)"
+    style="display: none;"
+  >
+    <div class="modal-box" onclick="event.stopPropagation()">
+      <button class="close-btn" onclick="closeModal()">×</button>
+
+      <!-- TOP ROW -->
+      <div class="modal-content">
+        <!-- LEFT: PROJECT DEMO VIDEO -->
+        <div class="modal-video">
+          <video controls autoplay muted loop playsinline>
+            <source src="/videos/macromate.mp4" type="video/mp4" />
+          </video>
+        </div>
+
+        <!-- RIGHT: TEXT CONTENT -->
+        <div class="modal-info">
+          <h1>MacroMate</h1>
+
+          <p class="modal-description">
+            A comprehensive health-tracking program that calculates the user’s BMI
+            and recommends a personalized daily calorie target. It also functions as
+            a food-logging diary, allowing users to record meals, monitor nutritional
+            habits, and upload photos for visual tracking and improved accuracy.
+          </p>
+
+          <p class="modal-tech">
+            <b>Programming Languages / Tools:</b><br />
+            HTML, CSS, JavaScript, Node.js, EJS
+          </p>
+
+          <div class="modal-palette">
+            <b>Colour Palette:</b>
+            <div class="palette-row">
+              <span class="color-dot" style="background: #ffc107;"></span>
+              <span class="color-dot" style="background: #ffffff;"></span>
+              <span class="color-dot" style="background: #0d6efd;"></span>
+              <span class="color-dot" style="background: #198754;"></span>
+              <span class="color-dot" style="background: #a52a2c;"></span>
             </div>
           </div>
-        </nav>
+        </div>
+      </div>
 
-<section class="coding-wallpaper">
-            <div>
-            <h1>My Coding Projects </h1>
-            <p>Here are the coding projects that define my journey as an aspiring web and app developer. 
-              From classroom challenges to personal experiments, each project highlights what I’ve learned and how I continue to grow in the world of tech.<br>
-            Click on the images of the project to read more.</p>
+      <!-- BOTTOM: SNAPSHOTS -->
+      <div class="modal-gallery">
+        <img src="/images/macromate.png" alt="MacroMate snapshot 1" />
+        <img src="/images/macromate2.png" alt="MacroMate snapshot 2" />
+        <img src="/images/macromate3.png" alt="MacroMate snapshot 3" />
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================= -->
+  <!--       GPA MODAL          -->
+  <!-- ========================= -->
+  <div
+    id="gpaModal"
+    class="modal-overlay"
+    onclick="closeModal(event)"
+    style="display: none;"
+  >
+    <div class="modal-box" onclick="event.stopPropagation()">
+      <button class="close-btn" onclick="closeModal()">×</button>
+
+      <!-- TOP ROW -->
+      <div class="modal-content">
+        <!-- LEFT: PROJECT DEMO VIDEO -->
+        <div class="modal-video">
+          <video controls autoplay muted loop playsinline>
+            <source src="/videos/gpa-tracker.mp4" type="video/mp4" />
+          </video>
+        </div>
+
+        <!-- RIGHT: TEXT CONTENT -->
+        <div class="modal-info">
+          <h1>GPA Tracker</h1>
+
+          <p class="modal-description">
+            A web application that helps students calculate module grades and projected
+            GPA. Built with Node.js and EJS.
+          </p>
+
+          <p class="modal-tech">
+            <b>Programming Languages / Tools:</b><br />
+            HTML, CSS, JavaScript, Node.js, EJS
+          </p>
+
+          <div class="modal-palette">
+            <b>Colour Palette:</b>
+            <div class="palette-row">
+              <span class="color-dot" style="background: #1e3a8a;"></span>
+              <span class="color-dot" style="background: #60a5fa;"></span>
+              <span class="color-dot" style="background: #facc15;"></span>
+              <span class="color-dot" style="background: #26b67b;"></span>
             </div>
-          </section>
-  
-          <section class="project-wallpaper">
+          </div>
+        </div>
+      </div>
 
-            <%- include("components/projectCarousel", {
-              id: "codingCarousel",
-              images: [
-                "/images/macromate.png",
-                "/images/macromate2.png",
-                "/images/macromate3.png"
-              ],
-              modalTarget: "codingModal"
-            }) %>
-          
-          
-            <div style="margin-left: 50px; color:#3c3d4b">
-              <h1 style="font-family: Kindergarten; font-size:70px; font-weight:bold">
-                  MacroMate
-              </h1>
-              <p style="max-width:600px; font-size:20px;">
-                A BMI calculator and calorie-allocation app that lets users log daily food intake with optional photo entries.
-              </p>
-            </div>
+      <!-- BOTTOM: SNAPSHOTS -->
+      <div class="modal-gallery">
+        <img src="/images/gpa-tracker.png" alt="GPA Tracker snapshot 1" />
+        <img src="/images/gpa-tracker2.png" alt="GPA Tracker snapshot 2" />
+        <img src="/images/gpa-tracker3.png" alt="GPA Tracker snapshot 3" />
+      </div>
+    </div>
+  </div>
 
-            </section>
-            <section class="project-wallpaper">
-            <!-- GPA TRACKER CAROUSEL -->
-            <%- include("components/projectCarousel", {
-              id: "gpaCarousel",
-              images: [
-                "/images/gpa-tracker.png",
-                "/images/gpa-tracker2.png",
-                "/images/gpa-tracker3.png"
-              ],
-              modalTarget: "gpaModal"
-            }) %>
+  <!-- FULLSCREEN IMAGE VIEWER (from old projectModal partial) -->
+  <div id="lightbox" class="lightbox" onclick="closeLightbox(event)">
+    <button class="lightbox-close" onclick="closeLightbox()">×</button>
 
-            <div style="margin-left: 50px; color:#3c3d4b">
-              <h1 style="font-family: Kindergarten; font-size:70px; font-weight:bold">
-                  GPA Tracker
-              </h1>
-              <p style="max-width:600px; font-size:20px;">
-                A simple GPA tracking web app built with Node.js and EJS.
-              </p>
-            </div>
+    <button class="nav prev" onclick="prevImage()">‹</button>
 
-          </section>
-          
-          
-          <%- include("components/projectModal", {
-            id: "codingModal",
-          
-            demoVideo: "/videos/macromate.mp4",
-          
-            title: "MacroMate",
-          
-            description:
-              "A comprehensive health-tracking program that calculates the user’s BMI and recommends a personalized daily calorie target. It also functions as a food-logging diary, allowing users to record meals, monitor nutritional habits, and upload photos for visual tracking and improved accuracy.",
-          
-            tech:
-              "HTML, CSS, JavaScript, Node.js, EJS",
-          
-            palette: [
-              "#ffc107",
-              "#ffffff",
-              "#0d6efd",
-              "#198754",
-              "#a52a2c"
-            ],
-          
-            snapshots: [
-              "/images/macromate.png",
-              "/images/macromate2.png",
-              "/images/macromate3.png"
-            ]
-          }) %>
+    <img id="lightbox-img" src="" alt="Lightbox image" />
 
-          <!-- GPA TRACKER MODAL -->
-          <%- include("components/projectModal", {
-            id: "gpaModal",
+    <button class="nav next" onclick="nextImage()">›</button>
+  </div>
 
-            demoVideo: "/videos/gpa-tracker.mp4",
+  <!-- MODAL CONTROL SCRIPT -->
+  <script>
+    function openModal(id) {
+      const modal = document.getElementById(id);
+      if (modal) {
+        modal.style.display = "flex";
+      }
+    }
 
-            title: "GPA Tracker",
+    function closeModal(e) {
+      if (!e || e.target.classList.contains("modal-overlay")) {
+        document
+          .querySelectorAll(".modal-overlay")
+          .forEach((modal) => {
+            modal.style.display = "none";
+          });
+      }
+    }
+  </script>
 
-            description:
-              "A web application that helps students calculate module grades and projected GPA. Built with Node.js and EJS.",
-
-            tech:
-              "HTML, CSS, JavaScript, Node.js, EJS",
-
-            palette: [
-              "#1e3a8a",
-              "#60a5fa",
-              "#facc15",
-              "#26b67b",
-            ],
-
-            snapshots: [
-              "/images/gpa-tracker.png",
-              "/images/gpa-tracker2.png",
-              "/images/gpa-tracker3.png"
-            ]
-          }) %>          
-          
-          <script>
-          function openModal(id) {
-            const modal = document.getElementById(id);
-            modal.style.display = "flex";
-          }
-                      
-            function closeModal(e) {
-              if (!e || e.target.classList.contains("modal-overlay")) {
-                document.querySelectorAll(".modal-overlay").forEach((modal) => {
-                  modal.style.display = "none";
-                });
-              }
-            }
-            </script>
-          <script src="/js/lightbox.js"></script>
-            
-            
-            
+  <!-- Lightbox behaviour (you already had this) -->
+  <script src="/js/lightbox.js"></script>
 </body>
 </html>
