@@ -1,4 +1,4 @@
-<!-- projectModal.ejs -->
+
   
   <div id="<%= id %>" class="modal-overlay" onclick="closeModal(event)">
     <div class="modal-box" onclick="event.stopPropagation()">
@@ -49,3 +49,13 @@
     </div>
   </div>
   
+<!-- FULLSCREEN IMAGE VIEWER -->
+<div id="lightbox" class="lightbox" onclick="closeLightbox(event)">
+  <button class="lightbox-close" onclick="closeLightbox()">×</button>
+
+  <button class="nav prev" onclick="prevImage()">‹</button>
+
+  <img id="lightbox-img" src="" />
+
+  <button class="nav next" onclick="nextImage()">›</button>
+</div>

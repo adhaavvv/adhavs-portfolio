@@ -2,14 +2,9 @@
   "name": "portfolio-app",
   "version": "1.0.0",
   "description": "",
-  "main": "api/app.js",
+  "main": "app.js",
   "scripts": {
-    "start": "node api/app.js",
-    "dev": "node api/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "engines": {
-    "node": ">=18"
   },
   "keywords": [],
   "author": "",
