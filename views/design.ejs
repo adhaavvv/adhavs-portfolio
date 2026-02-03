@@ -1,0 +1,333 @@
+<!-- design.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/png" href="/images/favicon.png" />
+    <title>Adhav's Portfolio</title>
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+  </script>
+  
+  <meta charset="UTF-8">
+  <title>Adhav’s Portfolio</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg custom-nav">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/" style="margin-right: 100;">
+                <img src="/images/logo.png" alt="Adhav Logo" class="logo-img">
+              </a>              
+              
+            <div class="collapse navbar-collapse" id="navbarNav" style="margin-left: 100">
+              <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="/#about">About</a></li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="projectsDropdown"
+                     role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Projects
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="projectsDropdown">
+                    <li><a class="dropdown-item" href="/coding">Coding</a></li>
+                    <li><a class="dropdown-item" href="/design">Design</a></li>
+                  </ul>
+                </li>
+                
+                <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+
+<section class="design-wallpaper">
+            <div>
+            <h1>My Design Projects </h1>
+            <p>Here are the design projects that showcase my journey as a visual designer, from early explorations to more refined works. Spanning UI/UX, graphic design, and editorial layouts, each project reflects how I translate ideas into clear, thoughtful, and engaging visual experiences.
+                Click on the images of the project to read more.</p>
+            </div>
+          </section>
+
+          <section class="project-wallpaper" id="LAR">
+
+            <%- include("components/projectCarousel", {
+              id: "LARCarousel",
+              images: [
+                "/images/LAR1.png",
+                "/images/LAR2.png",
+                "/images/LAR3.png",
+                "/images/LAR4.png",
+                "/images/LAR5.png",
+                "/images/LAR6.png",
+                "/images/LAR7.png",
+                "/images/LAR8.png",
+              ],
+              modalTarget: "LARModal"
+            }) %>
+          
+          
+            <div style="margin-left: 0px; color:#3c3d4b">
+              <h1 style="font-family: Kindergarten; font-size:70px; font-weight:bold">
+                  Learn@RP Mobile App Figma
+              </h1>
+              <p style="max-width:600px; font-size:20px;">
+                Learn@RP is a high-fidelity mobile learning app designed to help RP students upskill on the go through bite-sized video lessons and structured mini-courses. The prototype features a fully custom UI kit, personalised course recommendations, progress tracking, and micro-interactions such as streaks and lesson completion to keep learning engaging and motivating.
+              </p>
+            </div>
+
+            </section>
+
+            <section class="project-wallpaper-2" id="LAR">
+
+                <%- include("components/projectCarousel", {
+                  id: "IZGCarousel",
+                  images: [
+                    "/images/IZG1.png",
+                    "/images/IZG2.png",
+                    "/images/IZG3.png",
+                    "/images/IZG4.png",
+                    "/images/IZG5.png",
+                    "/images/IZG6.png",
+                    "/images/IZG7.png",
+                  ],
+                  modalTarget: "IZGModal"
+                }) %>
+              
+              
+                <div style="margin-left: 0px; color:#3c3d4b">
+                  <h1 style="font-family: Kindergarten; font-size:70px; font-weight:bold">
+                      ItZGreen Web Figma
+                  </h1>
+                  <p style="max-width:600px; font-size:20px;">
+                    ItZGreen is a sustainable e-commerce web app designed to help users make eco-conscious purchasing decisions with clarity and confidence. The prototype features CO₂e indicators, verified sustainability badges, detailed product overlays, and review sorting to promote transparency, while a clean, nature-inspired UI enhances usability across browsing, product comparison, and profile management flows.
+                  </p>
+                </div>
+    
+                </section>
+
+                <section class="project-wallpaper" id="TEE4">
+
+                    <%- include("components/projectCarousel", {
+                      id: "TEE4Carousel",
+                      images: [
+                        "/images/TEE41.png",
+                        "/images/TEE42.png",
+                        "/images/TEE43.png",
+                      ],
+                      modalTarget: "TEE4Modal"
+                    }) %>
+                  
+                    <div style="margin-left: 0px; color:#3c3d4b">
+                      <h1 style="font-family: Kindergarten; font-size:70px; font-weight:bold">
+                          The Eagle's Eye <br>
+                        Vol. 5 Issue 1
+                      </h1>
+                      <p style="max-width:600px; font-size:20px;">
+                        For this issue of The Eagle’s Eye, my secondary school’s student-run newsletter, I joined the publication team as a Designer during my first exposure to Adobe Photoshop. This project marked my introduction to digital layout and visual composition, where I contributed to page designs while learning design fundamentals hands-on through real publication work.
+                      </p>
+                    </div>
+        
+                    </section>
+
+          <section class="project-wallpaper-2" id="TEE9">
+
+            <%- include("components/projectCarousel", {
+              id: "TEE9Carousel",
+              images: [
+                "/images/TEE91.jpg",
+                "/images/TEE92.jpg",
+                "/images/TEE93.jpg",
+                "/images/TEE94.jpg",
+              ],
+              modalTarget: "TEE9Modal"
+            }) %>
+          
+            <div style="margin-left: 0px; color:#3c3d4b">
+              <h1 style="font-family: Kindergarten; font-size:70px; font-weight:bold">
+                  The Eagle's Eye <br>
+                Vol. 5 Issue 1
+              </h1>
+              <p style="max-width:600px; font-size:20px;">
+                For this issue of The Eagle’s Eye, my secondary school’s student-run newsletter, I served as both Editor-in-Chief and Lead Designer, overseeing the publication’s creative direction. I was responsible for designing the cover and page layouts, while also leading editorial decisions and coordinating the team to ensure a cohesive visual and editorial identity throughout the issue.
+              </p>
+            </div>
+
+            </section>
+
+            <%- include("components/projectModal", {
+                id: "LARModal",
+              
+                demoVideo: "/videos/LAR.mkv",
+              
+                title: "Learn@RP Mobile App Figma",
+    
+                projectperiod: "January 2026",
+              
+                description:
+                  "Learn@RP is a high-fidelity mobile learning app designed to help RP students upskill on the go through bite-sized video lessons and structured mini-courses. The prototype features a fully custom UI kit, personalised course recommendations, progress tracking, and micro-interactions such as streaks and lesson completion to keep learning engaging and motivating.",
+              
+                tech:
+                  "Figma, Adobe Photoshop",
+              
+                palette: [
+                  "#6bbc37",
+                  "#33561c",
+                  "#dfffca",
+                ],
+
+                figma: "https://www.figma.com/design/ygm9GVQBUJRNNCCLgALwcj/CA2?node-id=193-134&t=3HUp58EFSZgK5zOs-1",
+              
+                snapshots: [
+                "/images/LAR1.png",
+                "/images/LAR2.png",
+                "/images/LAR3.png",
+                "/images/LAR4.png",
+                "/images/LAR5.png",
+                "/images/LAR6.png",
+                "/images/LAR7.png",
+                "/images/LAR8.png",
+                ],
+              }) %>
+
+              <%- include("components/projectModal", {
+                id: "IZGModal",
+              
+                demoVideo: "/videos/IZG.mkv",
+              
+                title: "ItZGreen Web App Figma",
+    
+                projectperiod: "November - December 2025",
+              
+                description:
+                  "ItZGreen is a sustainable e-commerce web app designed to help users make eco-conscious purchasing decisions with clarity and confidence. The prototype features CO₂e indicators, verified sustainability badges, detailed product overlays, and review sorting to promote transparency, while a clean, nature-inspired UI enhances usability across browsing, product comparison, and profile management flows.",
+              
+                tech:
+                  "Figma, Adobe Photoshop",
+              
+                palette: [
+                  "#0E3017",
+                  "#FFC868",
+                  "#F4F5E1",
+                ],
+
+                figma: "https://www.figma.com/design/yzymxBb7tDZOrH31b2fozu/Adhav-Anbalagan-24012794-SustainableFashion-Wireframe?node-id=8-2&t=P9HrZZWF12DblPSy-1",
+              
+                snapshots: [
+                "/images/IZG1.png",
+                "/images/IZG2.png",
+                "/images/IZG3.png",
+                "/images/IZG4.png",
+                "/images/IZG5.png",
+                "/images/IZG6.png",
+                "/images/IZG7.png",
+                ],
+              }) %>
+
+              <%- include("components/projectModal", {
+                id: "TEE4Modal",
+              
+                pdf: "/pdf/TEE4.pdf",
+              
+                title: "The Eagle's Eye Vol. 2 Issue 2",
+    
+                projectperiod: "February - May 2023",
+              
+                description:
+                  "For this issue of The Eagle’s Eye, my secondary school’s student-run newsletter, I joined the publication team as a Designer during my first exposure to Adobe Photoshop. This project marked my introduction to digital layout and visual composition, where I contributed to page designs while learning design fundamentals hands-on through real publication work",
+              
+                tech:
+                  "Adobe Photoshop, Canva",
+              
+                palette: [
+                  "#919191",
+                  "#595959",
+                  "#e7e7e7",
+                ],
+    
+                docs: "https://drive.google.com/file/d/1M0yIdO_ppbrSihE-ujrBasAzcPWEc0gY/view?usp=sharing",
+              
+                snapshots: [
+                "/images/TEE44.jpg",
+                "/images/TEE45.jpg",
+                "/images/TEE46.jpg",
+                "/images/TEE47.jpg",
+                ],
+              }) %>
+
+          <%- include("components/projectModal", {
+            id: "TEE9Modal",
+          
+            pdf: "/pdf/TEE9.pdf",
+          
+            title: "The Eagle's Eye Vol. 5 Issue 1",
+
+            projectperiod: "February - May 2023",
+          
+            description:
+              "For this issue of The Eagle’s Eye, my secondary school’s student-run newsletter, I served as both Editor-in-Chief and Lead Designer, overseeing the publication’s creative direction. I was responsible for designing the cover and page layouts, while also leading editorial decisions and coordinating the team to ensure a cohesive visual and editorial identity throughout the issue.",
+          
+            tech:
+              "Adobe Photoshop, Canva",
+          
+            palette: [
+              "#3a8df3",
+              "#66afd8",
+              "#557df3",
+            ],
+
+            docs: "https://drive.google.com/file/d/10RKYcxipFjKX_YoE5dTXOyaRVWVlXxIB/view?usp=sharing",
+          
+            snapshots: [
+            "/images/TEE91.jpg",
+            "/images/TEE92.jpg",
+            "/images/TEE93.jpg",
+            "/images/TEE94.jpg",
+            ],
+          }) %>
+
+
+    <!-- FULLSCREEN IMAGE VIEWER (ONLY ONCE PER PAGE) -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox(event)">
+      <button class="lightbox-close" type="button" onclick="closeLightbox()">×</button>
+
+      <button class="nav prev" type="button" onclick="prevImage()">‹</button>
+
+      <img id="lightbox-img" src="" alt="Fullscreen project screenshot" />
+
+      <button class="nav next" type="button" onclick="nextImage()">›</button>
+    </div>
+          
+          <script>
+            function openModal(id) {
+                const modal = document.getElementById(id);
+                modal.style.display = "flex";
+
+                if (window.initPdfInModal) {
+                requestAnimationFrame(() => {
+                    requestAnimationFrame(() => {
+                    window.initPdfInModal(modal);
+                    });
+                });
+                }
+            }
+                      
+            function closeModal(e) {
+              if (!e || e.target.classList.contains("modal-overlay")) {
+                document.querySelectorAll(".modal-overlay").forEach((modal) => {
+                  modal.style.display = "none";
+                });
+              }
+            }
+            </script>
+          <script src="/js/lightbox.js"></script>
+
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+          <script src="/js/pdfViewer.js"></script>
+
+</body>
+</html>

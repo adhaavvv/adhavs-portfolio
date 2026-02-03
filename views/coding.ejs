@@ -27,7 +27,7 @@
               
             <div class="collapse navbar-collapse" id="navbarNav" style="margin-left: 100">
               <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="/#about">About</a></li>
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" id="projectsDropdown"
                      role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -35,11 +35,11 @@
                   </a>
                   <ul class="dropdown-menu" aria-labelledby="projectsDropdown">
                     <li><a class="dropdown-item" href="/coding">Coding</a></li>
-                    <li><a class="dropdown-item" href="#design">Design</a></li>
+                    <li><a class="dropdown-item" href="/design">Design</a></li>
                   </ul>
                 </li>
                 
-                <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>
               </ul>
             </div>
           </div>
@@ -53,8 +53,61 @@
             Click on the images of the project to read more.</p>
             </div>
           </section>
+
+          <section class="project-wallpaper" id="study-sprint">
+
+            <%- include("components/projectCarousel", {
+              id: "codingCarousel",
+              images: [
+                "/images/StudySprint1.png",
+                "/images/StudySprint2.png",
+                "/images/StudySprint3.png",
+                "/images/StudySprint4.png",
+                "/images/StudySprint5.png",
+                "/images/StudySprint6.png",
+                "/images/StudySprint7.png",
+                "/images/StudySprint8.png",
+              ],
+              modalTarget: "StudySprintModal"
+            }) %>
+          
+          
+            <div style="margin-left: 0px; color:#3c3d4b">
+              <h1 style="font-family: Kindergarten; font-size:70px; font-weight:bold">
+                  StudySprint
+              </h1>
+              <p style="max-width:600px; font-size:20px;">
+                A web app created to let students create study sessions and let students from around the school to join!
+              </p>
+            </div>
+
+            </section>
+
+          <section class="project-wallpaper" id="food-waste-saver">
+
+            <%- include("components/projectCarousel", {
+              id: "codingCarousel",
+              images: [
+                "/images/FoodWasteSaver1.png",
+                "/images/FoodWasteSaver2.png",
+                "/images/FoodWasteSaver3.png"
+              ],
+              modalTarget: "FoodWasteSaverModal"
+            }) %>
+          
+          
+            <div style="margin-left: 0px; color:#3c3d4b">
+              <h1 style="font-family: Kindergarten; font-size:70px; font-weight:bold">
+                  FoodWasteSaver
+              </h1>
+              <p style="max-width:600px; font-size:20px;">
+                A mobile app created to help reduce food waste, and track calories!
+              </p>
+            </div>
+
+            </section>
   
-          <section class="project-wallpaper">
+          <section class="project-wallpaper" id="macro-mate">
 
             <%- include("components/projectCarousel", {
               id: "codingCarousel",
@@ -67,7 +120,7 @@
             }) %>
           
           
-            <div style="margin-left: 50px; color:#3c3d4b">
+            <div style="margin-left: 0px; color:#3c3d4b">
               <h1 style="font-family: Kindergarten; font-size:70px; font-weight:bold">
                   MacroMate
               </h1>
@@ -77,7 +130,7 @@
             </div>
 
             </section>
-            <section class="project-wallpaper">
+            <section class="project-wallpaper" id="gpa-tracker">
             <!-- GPA TRACKER CAROUSEL -->
             <%- include("components/projectCarousel", {
               id: "gpaCarousel",
@@ -89,7 +142,7 @@
               modalTarget: "gpaModal"
             }) %>
 
-            <div style="margin-left: 50px; color:#3c3d4b">
+            <div style="margin-left: 0px; color:#3c3d4b">
               <h1 style="font-family: Kindergarten; font-size:70px; font-weight:bold">
                   GPA Tracker
               </h1>
@@ -99,6 +152,81 @@
             </div>
 
           </section>
+
+          <%- include("components/projectModal", {
+            id: "StudySprintModal",
+          
+            demoVideo: "/videos/StudySprint.mkv",
+          
+            title: "StudySprint",
+
+            projectperiod: "January 2026",
+          
+            description:
+              "StudySprint is a full-stack web app that lets students create, discover, and join study sessions by module and date. It streamlines collaborative learning with secure authentication and real-time session management.",
+          
+            tech:
+              "JavaScript, CSS, HTML",
+          
+            palette: [
+              "#5e248e",
+              "#6c757d",
+              "#007bff",
+            ],
+          
+            snapshots: [
+            "/images/StudySprint1.png",
+            "/images/StudySprint2.png",
+            "/images/StudySprint3.png",
+            "/images/StudySprint4.png",
+            "/images/StudySprint5.png",
+            "/images/StudySprint6.png",
+            "/images/StudySprint7.png",
+            "/images/StudySprint8.png",
+            ],
+
+            docs: "https://docs.google.com/document/d/19iA-FHqcMjUjWWjlYef2hJ9-B9e6bcHMzQNw6vGjE0E/edit?usp=sharing",
+
+            github: "https://github.com/adhaavvv/study-sprint-starter",
+
+            link: "https://study-sprint-starter.onrender.com/"            
+          }) %>
+
+          <%- include("components/projectModal", {
+            id: "FoodWasteSaverModal",
+          
+            demoVideo: "/videos/FoodWasteSaver.mp4",
+          
+            title: "FoodWasteSaver",
+
+            projectperiod: "January 2026",
+          
+            description:
+              "This mobile app supports Singapore’s Green Plan by allowing users to log and manage their food consumption and wastage habits, including whether meals were eaten, frozen, donated, or composted. It also includes a calorie tracker that sums calories from meals marked as “ATE,” encouraging healthier and more sustainable eating choices.",
+          
+            tech:
+              "JavaScript",
+          
+            palette: [
+              "#caf6fe",
+              "#ea9b1d",
+              "#3b86be",
+              "#4CAF50",
+              "#2196F3",
+              "#FBC02D",
+              "#8D6E63"
+            ],
+
+            docs:"https://docs.google.com/document/d/1XQjy4FTdvDyaKf4S66Z9thto47Ut4hNoT2e-2MidPkw/edit?usp=sharing",
+            
+            github:"https://github.com/AY2025-S2-C346/c346-004-ca2mobileapp-c346-004_team3_mobileapp",
+          
+            snapshots: [
+            "/images/FoodWasteSaver1.png",
+            "/images/FoodWasteSaver2.png",
+            "/images/FoodWasteSaver3.png"
+            ],
+          }) %>
           
           
           <%- include("components/projectModal", {
@@ -107,6 +235,8 @@
             demoVideo: "/videos/macromate.mp4",
           
             title: "MacroMate",
+
+            projectperiod: "May 2025",
           
             description:
               "A comprehensive health-tracking program that calculates the user’s BMI and recommends a personalized daily calorie target. It also functions as a food-logging diary, allowing users to record meals, monitor nutritional habits, and upload photos for visual tracking and improved accuracy.",
@@ -126,7 +256,9 @@
               "/images/macromate.png",
               "/images/macromate2.png",
               "/images/macromate3.png"
-            ]
+            ],
+
+            github: "https://github.com/adhaavvv/CA1"
           }) %>
 
           <!-- GPA TRACKER MODAL -->
@@ -136,6 +268,8 @@
             demoVideo: "/videos/gpa-tracker.mp4",
 
             title: "GPA Tracker",
+
+            projectperiod: "August 2025",
 
             description:
               "A web application that helps students calculate module grades and projected GPA. Built with Node.js and EJS.",
@@ -150,18 +284,35 @@
               "#26b67b",
             ],
 
+            github: "https://github.com/adhaavvv/GPA-Tracker-2",
+
             snapshots: [
               "/images/gpa-tracker.png",
               "/images/gpa-tracker2.png",
               "/images/gpa-tracker3.png"
-            ]
-          }) %>          
+            ],
+
+          }) %>
+
+    <!-- FULLSCREEN IMAGE VIEWER (ONLY ONCE PER PAGE) -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox(event)">
+      <button class="lightbox-close" type="button" onclick="closeLightbox()">×</button>
+
+      <button class="nav prev" type="button" onclick="prevImage()">‹</button>
+
+      <img id="lightbox-img" src="" alt="Fullscreen project screenshot" />
+
+      <button class="nav next" type="button" onclick="nextImage()">›</button>
+    </div>
           
           <script>
-          function openModal(id) {
-            const modal = document.getElementById(id);
-            modal.style.display = "flex";
-          }
+            function openModal(id) {
+              const modal = document.getElementById(id);
+              modal.style.display = "flex";
+
+              // If this modal contains a PDF viewer, initialize it
+              if (window.initPdfInModal) window.initPdfInModal(modal);
+            }
                       
             function closeModal(e) {
               if (!e || e.target.classList.contains("modal-overlay")) {
@@ -172,8 +323,9 @@
             }
             </script>
           <script src="/js/lightbox.js"></script>
-            
-            
-            
+
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.0.379/pdf.min.js"></script>
+          <script src="/js/pdfViewer.js"></script>
+
 </body>
 </html>

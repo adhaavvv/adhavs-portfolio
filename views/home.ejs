@@ -28,7 +28,7 @@
             <div class="collapse navbar-collapse" id="navbarNav" style="margin-left: 100">
               <ul class="navbar-nav ms-auto">
                 <!-- <li class="nav-item"><a class="nav-link active" href="#">Home</a></li> -->
-                <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" id="projectsDropdown"
                      role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -36,142 +36,454 @@
                   </a>
                   <ul class="dropdown-menu" aria-labelledby="projectsDropdown">
                     <li><a class="dropdown-item" href="/coding">Coding</a></li>
-                    <li><a class="dropdown-item" href="#design">Design</a></li>
+                    <li><a class="dropdown-item" href="/design">Design</a></li>
                   </ul>
                 </li>
                 
-                <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>
               </ul>
             </div>
           </div>
         </nav>
       
+        <section class="paper-wallpaper">
+          <!-- LEFT -->
+          <div class="paper-wallpaper-content">
+            <img src="/images/homepage.png" alt="Hi! I'm Adhav" class="hero-title-img">
         
-        <!-- <section class="paper-wallpaper">
-            <div class="paper-wallpaper-content" style="color: #3c3d4b; margin-left: 10px">
-            <img src="/images/homepage.png" alt="Hi! I'm Adhav" width="500" height="auto">
-              <p style="max-width: 600px; font-size: 20px">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed 
-                do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                 Ut enim ad minim veniam, quis nostrud exercitation ullamco 
-                laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
-                dolor in reprehenderit in voluptate velit esse cillum dolore eu 
-                fugiat nulla pariatur. Excepteur sint occaecat cupidatat non 
-                proident, sunt in culpa qui officia deserunt mollit anim id est 
-                laborum.</p>
-            </div>
-          </section> -->
-
-          <section class="paper-wallpaper">
-
-            <!-- LEFT COLUMN: Greeting + Text -->
-            <div class="paper-wallpaper-content" style="color: #3c3d4b; margin-left: 50px;">
-              <img src="/images/homepage.png" alt="Hi! I'm Adhav" width="600" height="auto">
-          
-              <p style="max-width: 600px; font-size: 20px;">
-                — a student developer and designer passionate about crafting clean, creative digital experiences. <br>
- <br>
-This portfolio showcases my work across web app development and graphic design, 
-from full-stack coding projects to UI/UX concepts and visual design explorations. 
-Feel free to browse through my coding builds, design prototypes, and experiments as I continue
- to learn and grow in both fields.
-              </p>
-            </div>
-          
-            <!-- RIGHT COLUMN: Your portrait -->
-            <div class="paper-wallpaper-image" style="margin-left: 40px;">
-              <img src="/images/Adhav.png" 
-                   alt="Adhav Portrait" 
-                   style="width: 700px; height: auto; border-radius: 20px;">
-            </div>
-          
-          </section>
-          
+            <p class="hero-desc">
+              — a student developer and designer passionate about crafting clean, creative digital experiences. <br><br>
+              This portfolio showcases my work across web app development and graphic design,
+              from full-stack coding projects to UI/UX concepts and visual design explorations.
+              Feel free to browse through my coding builds, design prototypes, and experiments as I continue
+              to learn and grow in both fields.
+            </p>
+          </div>
+        
+          <!-- RIGHT -->
+          <div class="paper-wallpaper-image">
+            <img src="/images/Adhav.png" alt="Adhav Portrait" class="hero-portrait">
+          </div>
+        </section>
+        
           
           <!-- WHO I AM SECTION -->
-<section class="about-section">
-  <div class="about-text">
-    <h2>About Me</h2>
-    <p>
-      I’m a Year 2 student at Republic Polytechnic studying digital development, with aspirations to become a professional web application developer and graphic designer.
-<br><br>
-      I enjoy blending technical problem-solving with visual storytelling — building functional apps that not only work well, but look and feel intuitive to use. My interests lie in front-end development, UI/UX design, and crafting user-focused digital experiences that leave a lasting impression.
-      
-    </p>
-  </div>
+<section class="about-section" id="about">
+  <div class="about-container">
 
-  <div class="about-image">
-    <img src="/images/About Me.jpeg" alt="About me image">
+    <div class="about-top">
+      <div class="about-text">
+        <h2>About Me</h2>
+        <p>
+          I’m a Year 2 student at Republic Polytechnic studying digital development,
+          with aspirations to become a professional web application developer and
+          graphic designer.
+          <br><br>
+          I enjoy blending technical problem-solving with visual storytelling —
+          building functional apps that not only work well, but look and feel intuitive
+          to use.
+        </p>
+      </div>
+
+      <div class="about-image">
+        <img src="/images/About Me.jpeg" alt="About me image">
+      </div>
+    </div>
+
+    <div class="about-cards">
+      <div class="about-card">
+        <h5>What I do</h5>
+        <p>Front-end development + UI/UX + visual design.</p>
+      </div>
+      <div class="about-card">
+        <h5>Currently learning</h5>
+        <p>React Native, Node.js, API integration.</p>
+      </div>
+      <div class="about-card">
+        <h5>Tools</h5>
+        <p>Figma, VS Code, Adobe suite.</p>
+      </div>
+    </div>
+
   </div>
 </section>
+
 
 
 <!-- JOURNEY SECTION -->
-<section class="journey-section">
-  <h2>Journey</h2>
+<section class="journey-section" id="journey">
+  <div class="journey-container">
+    <!-- LEFT: IMAGE -->
+    <div class="journey-left">
+      <img id="journeyImage" src="/images/Waffles.jpeg" alt="Journey photo" class="journey-photo" />
+    </div>
 
-  <!-- 2024 FIRST -->
-  <div class="journey-item">
-    <span class="journey-dot"></span>
-    <div class="journey-content">
-      <h4>2025</h4>
-      <p>
-        As a Year 2 student at Republic Polytechnic, I’m building skills in React Native, Node.js,
-         and UI/UX design while working on mobile and web application projects. I’m also part of the Youth Corps 
-         Leadership Programme, leading community initiatives and developing teamwork and leadership experience.
-      </p>
+    <!-- RIGHT: TIMELINE -->
+    <div class="journey-right">
+      <h2>My Journey</h2>
+
+      <div class="journey-timeline">
+        <!-- 2025 -->
+        <div class="journey-item">
+          <span class="journey-dot"></span>
+          <div class="journey-content" data-image="/images/2025.jpeg" tabindex="0">
+          <div class="journey-content">
+            <h4>2025</h4>
+            <p>
+              As a Year 2 student at Republic Polytechnic, I’m building skills in React Native, Node.js,
+              and UI/UX design while working on mobile and web application projects. I’m also part of
+              the Youth Corps Leadership Programme, leading community initiatives and developing teamwork
+              and leadership experience.
+            </p>
+          </div>
+        </div>
+        </div>
+
+        <!-- 2024 -->
+        <div class="journey-item">
+          <span class="journey-dot"></span>
+          <div class="journey-content" data-image="/images/2024.jpeg" tabindex="0">
+          <div class="journey-content">
+            <h4>2024</h4>
+            <p>
+              In Year 1, I learned Python and applied it to business process workflows and everyday
+              problem-solving tasks. This year built my foundation in logical thinking and real-world
+              application of programming concepts.
+            </p>
+          </div>
+          </div>
+        </div>
+
+        <!-- 2020 - 2023 -->
+        <div class="journey-item">
+          <span class="journey-dot"></span>
+          <div class="journey-content" data-image="/images/2023.jpeg" tabindex="0">
+          <div class="journey-content">
+            <h4>2020 - 2023</h4>
+            <p>
+              During secondary school, I explored graphic design and film editing while serving as
+              President of the Speech and Drama CCA. These years shaped my creativity, leadership skills,
+              and passion for visual storytelling and digital media.
+            </p>
+          </div>
+        </div>
+        </div>
+      </div>
     </div>
   </div>
-
-  <!-- 2023 BELOW -->
-  <div class="journey-item">
-    <span class="journey-dot"></span>
-    <div class="journey-content">
-      <h4>2024</h4>
-      <p>
-        In Year 1, I learned Python and applied it to business process workflows and everyday problem-solving tasks. 
-        This year built my foundation in logical thinking and real-world application of programming concepts.
-      </p>
-    </div>
-  </div>
-
-  <div class="journey-item">
-    <span class="journey-dot"></span>
-    <div class="journey-content">
-      <h4>2020 - 2023</h4>
-      <p>
-        During secondary school, I explored graphic design and film editing while serving as President of the Speech and Drama CCA.
-         These years shaped my creativity, leadership skills, and passion for visual storytelling and digital media.
-      </p>
-    </div>
-  </div>
-
 </section>
+
 
 
 <!-- SKILLS SECTION -->
-<section class="skills-section">
-  <h2>Skills</h2>
+<section class="skills-section" id="skills">
+  <h2 class="skills-title">My Skills</h2>
+  <p class="skills-subtitle">Tech & tools I use to build and design.</p>
 
-  <div class="skills-row">
-    <div class="skill-card">HTML</div>
-    <div class="skill-card">CSS</div>
-    <div class="skill-card">JavaScript</div>
-    <div class="skill-card">Node.js</div>
+  <div class="skills-grid">
+    <div class="skill-tile"
+    role="button"
+    tabindex="0"
+    data-skill="JavaScript"
+    data-year="2025"
+    data-level="Intermediate"
+    data-used="StudySprint (Full-stack), GPA Tracker, Food Waste Saver"
+    data-used-html='<a href="/coding#study-sprint" class="used-link">StudySprint</a>, 
+    <a href="/coding#food-waste-saver" class="used-link">Food WasteSaver</a>, 
+    <a href="/coding#macro-mate" class="used-link">MacroMate</a>, 
+    <a href="/coding#gpa-tracker" class="used-link">GPA Tracker</a>'
+    data-desc="Used for interactive UI, DOM logic, and API integration in my projects."
+    data-img="/images/JavaScript Logo.png">
+      <div class="skill-icon">
+        <img src="/images/JavaScript Logo.png" alt="JavaScript logo">
+      </div>
+      <div class="skill-name">JavaScript</div>
+    </div>
+
+    <div class="skill-tile"
+         role="button"
+         tabindex="0"
+         data-skill="HTML"
+         data-year="2024"
+         data-level="Advanced"
+         data-used="Portfolio site, StudySprint UI, class web labs"
+         data-used-html='<a href="/coding#study-sprint" class="used-link">StudySprint</a>, 
+         <a href="/coding#macro-mate" class="used-link">MacroMate</a>, 
+         <a href="/coding#gpa-tracker" class="used-link">GPA Tracker</a>'
+         data-desc="Semantic structure, accessibility-friendly layouts, and clean page sections."
+         data-img="/images/HTML Logo.png">
+      <div class="skill-icon">
+        <img src="/images/HTML Logo.png" alt="HTML logo">
+      </div>
+      <div class="skill-name">HTML</div>
+    </div>
+
+    <div class="skill-tile"
+         role="button"
+         tabindex="0"
+         data-skill="CSS"
+         data-year="2024"
+         data-level="Advanced"
+         data-used="Portfolio site, UI kits, responsive layouts"
+         data-used-html='<a href="/coding#study-sprint" class="used-link">StudySprint</a>, 
+         <a href="/coding#macro-mate" class="used-link">MacroMate</a>, 
+         <a href="/coding#gpa-tracker" class="used-link">GPA Tracker</a>'
+         data-desc="Grid/Flexbox layouts, hover animations, spacing systems, responsive design."
+         data-img="/images/CSS Logo.png">
+      <div class="skill-icon">
+        <img src="/images/CSS Logo.png" alt="CSS logo">
+      </div>
+      <div class="skill-name">CSS</div>
+    </div>
+
+    <div class="skill-tile"
+         role="button"
+         tabindex="0"
+         data-skill="Photoshop"
+         data-year="2020"
+         data-level="Intermediate"
+         data-used="Brand visuals, photo touch-ups, poster concepts"
+         data-desc="Image editing, compositing, and mockups for portfolio visuals."
+         data-img="/images/Photoshop Logo.png">
+      <div class="skill-icon">
+        <img src="/images/Photoshop Logo.png" alt="Photoshop logo">
+      </div>
+      <div class="skill-name">Photoshop</div>
+    </div>
+
+    <div class="skill-tile"
+         role="button"
+         tabindex="0"
+         data-skill="Illustrator"
+         data-year="2020"
+         data-level="Intermediate"
+         data-used="Logo design, icons, vector assets"
+         data-desc="Vector graphics, logo work, and icon systems for UI projects."
+         data-img="/images/Illustrator Logo.png">
+      <div class="skill-icon">
+        <img src="/images/Illustrator Logo.png" alt="Illustrator logo">
+      </div>
+      <div class="skill-name">Illustrator</div>
+    </div>
+
+    <div class="skill-tile"
+         role="button"
+         tabindex="0"
+         data-skill="Premiere Pro"
+         data-year="2021"
+         data-level="Beginner"
+         data-used="Short edits, school videos, montage clips"
+         data-desc="Basic cuts, audio balancing, and simple transitions."
+         data-img="/images/Premiere Pro Logo.png">
+      <div class="skill-icon">
+        <img src="/images/Premiere Pro Logo.png" alt="Premiere Pro logo">
+      </div>
+      <div class="skill-name">Premiere Pro</div>
+    </div>
   </div>
 </section>
+
 
 
 <!-- FUN FACTS SECTION -->
 <section class="funfacts-section">
-  <h2>Fun Facts</h2>
+  <div class="funfacts-container">
 
-  <ul>
-    <li>I love eco-friendly product design.</li>
-    <li>I collect vinyl records.</li>
-    <li>I enjoy late-night UI prototyping sessions.</li>
-    <li>I’m a huge movie soundtrack fan.</li>
-  </ul>
+    <h2 class="funfacts-title">Fun Facts</h2>
+    <p class="funfacts-subtitle">
+      A few things I love outside of coding & design.
+    </p>
+
+    <div class="funfacts-grid">
+
+      <!-- MUSIC -->
+      <div class="funfact-card">
+        <div class="funfact-icon">🎧</div>
+        <h4>Music Taste</h4>
+        <p>
+          I love alternative hip-hop and alternative rock.
+          Some of my favourites include
+          <strong>Tyler, the Creator</strong>
+          and
+          <strong>beabadoobee</strong>.
+        </p>
+
+        <!-- IMAGE STRIP -->
+        <div class="funfact-media">
+          <img src="/images/IGOR.png" alt="IGOR album cover">
+          <img src="/images/This Is How Tomorrow Moves.png" alt="This Is How Tomorrow Moves album cover">
+        </div>
+      </div>
+
+      <!-- FILMS -->
+      <div class="funfact-card">
+        <div class="funfact-icon">🎬</div>
+        <h4>Cinema</h4>
+        <p>
+          I’m really into films, especially darker and atmospheric stories.
+          Some of my favourites are
+          <strong>Se7en</strong>,
+          <strong>Taxi Driver</strong>,
+          and
+          <strong>Arrival</strong>.
+        </p>
+
+        <!-- IMAGE STRIP -->
+        <div class="funfact-media">
+          <img src="/images/Se7en.jpg" alt="Se7en movie poster">
+          <img src="/images/Arrival.jpg" alt="Arrival movie poster">
+          <img src="/images/Taxi Driver.jpg" alt="Taxi Driver movie poster">
+        </div>
+      </div>
+
+    </div>
+  </div>
 </section>
+
+
+
+<div class="skill-modal" id="skillModal" aria-hidden="true">
+  <div class="skill-modal__backdrop" data-close="true"></div>
+
+  <div class="skill-modal__content" role="dialog" aria-modal="true" aria-labelledby="skillModalTitle">
+    <button class="skill-modal__close" type="button" aria-label="Close" data-close="true">✕</button>
+
+    <div class="skill-modal__header">
+      <div class="skill-modal__logo">
+        <img id="skillModalImg" src="" alt="">
+      </div>
+
+      <div class="skill-modal__titleblock">
+        <h3 id="skillModalTitle"></h3>
+        <div class="skill-modal__meta">
+          <span class="pill" id="skillModalYear"></span>
+          <span class="pill" id="skillModalLevel"></span>
+        </div>
+      </div>
+    </div>
+
+    <p class="skill-modal__desc" id="skillModalDesc"></p>
+
+    <div class="skill-modal__section">
+      <h4>Projects I used it in</h4>
+      <p id="skillModalUsed"></p>
+    </div>
+  </div>
+</div>
+
+<script>
+  const modal = document.getElementById("skillModal");
+  const tiles = document.querySelectorAll(".skill-tile");
+
+  const modalTitle = document.getElementById("skillModalTitle");
+  const modalYear = document.getElementById("skillModalYear");
+  const modalLevel = document.getElementById("skillModalLevel");
+  const modalUsed = document.getElementById("skillModalUsed");
+  const modalDesc = document.getElementById("skillModalDesc");
+  const modalImg = document.getElementById("skillModalImg");
+
+  let lastFocusedEl = null;
+
+  function openModalFromTile(tile) {
+    lastFocusedEl = document.activeElement;
+
+    const skill = tile.dataset.skill || "Skill";
+    const year = tile.dataset.year || "—";
+    const level = tile.dataset.level || "—";
+    const used = tile.dataset.used || "—";
+    const desc = tile.dataset.desc || "";
+    const img = tile.dataset.img || "";
+
+    modalTitle.textContent = skill;
+    modalYear.textContent = `Skill attained: ${year}`;
+    modalLevel.textContent = `Level: ${level}`;
+    modalUsed.innerHTML = tile.dataset.usedHtml || used;
+    modalDesc.textContent = desc;
+
+    modalImg.src = img;
+    modalImg.alt = `${skill} logo`;
+
+    modal.classList.add("is-open");
+    modal.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden"; // stop background scroll
+
+    // Focus close button for accessibility
+    const closeBtn = modal.querySelector(".skill-modal__close");
+    closeBtn.focus();
+  }
+
+  function closeModal() {
+    modal.classList.remove("is-open");
+    modal.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+
+    if (lastFocusedEl) lastFocusedEl.focus();
+  }
+
+  tiles.forEach(tile => {
+    tile.addEventListener("click", () => openModalFromTile(tile));
+
+    // allow Enter/Space to open (keyboard)
+    tile.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        openModalFromTile(tile);
+      }
+    });
+  });
+
+  // close when clicking backdrop or close button
+  modal.addEventListener("click", (e) => {
+    const shouldClose = e.target.dataset.close === "true";
+    if (shouldClose) closeModal();
+  });
+
+  // close on ESC
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && modal.classList.contains("is-open")) {
+      closeModal();
+    }
+  });
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const imgEl = document.getElementById("journeyImage");
+    const cards = document.querySelectorAll(".journey-content");
+
+    function setActive(card) {
+      const newSrc = card.dataset.image;
+      if (!newSrc) return;
+
+      // Swap image
+      imgEl.classList.add("journey-photo-fade");
+      setTimeout(() => {
+        imgEl.src = newSrc;
+      }, 120);
+
+      // Remove active from all, add to clicked
+      cards.forEach(c => c.classList.remove("journey-active"));
+      card.classList.add("journey-active");
+    }
+
+    // When image loads, fade back in
+    imgEl.addEventListener("load", () => {
+      imgEl.classList.remove("journey-photo-fade");
+    });
+
+    // Click + keyboard support (Enter/Space)
+    cards.forEach(card => {
+      card.addEventListener("click", () => setActive(card));
+      card.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          setActive(card);
+        }
+      });
+    });
+  });
+</script>
+
+
 
 </body>
 </html>

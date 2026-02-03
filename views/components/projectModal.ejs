@@ -1,61 +1,125 @@
+<!-- components/projectModal.ejs -->
 
-  
-  <div id="<%= id %>" class="modal-overlay" onclick="closeModal(event)">
-    <div class="modal-box" onclick="event.stopPropagation()">
-  
-      <button class="close-btn" onclick="closeModal()">×</button>
-  
-      <!-- TOP ROW -->
-      <div class="modal-content">
-  
-        <!-- LEFT: PROJECT DEMO VIDEO -->
-        <div class="modal-video">
+<div id="<%= id %>" class="modal-overlay" onclick="closeModal(event)">
+  <div class="modal-box" onclick="event.stopPropagation()">
+
+    <button class="close-btn" onclick="closeModal()">×</button>
+
+    <!-- TOP ROW -->
+    <div class="modal-content">
+
+
+      <!-- LEFT: VIDEO OR PDF -->
+      <div class="modal-video <%= (typeof pdf !== "undefined" && pdf) ? "is-pdf" : "" %>">
+        <% if (typeof pdf !== "undefined" && pdf) { %>
+          <div class="pdf-viewer" data-pdf="<%= pdf %>">
+            <div class="pdf-toolbar">
+              <button type="button" class="pdf-btn pdf-prev">‹</button>
+              <span class="pdf-page">Page <span class="pdf-page-num">1</span> / <span class="pdf-page-count">?</span></span>
+              <button type="button" class="pdf-btn pdf-next">›</button>
+            </div>
+            <canvas class="pdf-canvas"></canvas>
+          </div>
+        <% } else { %>
           <video controls autoplay muted loop playsinline>
             <source src="<%= demoVideo %>" type="video/mp4">
           </video>
-        </div>
-  
-        <!-- RIGHT: TEXT CONTENT -->
-        <div class="modal-info">
-          <h1><%= title %></h1>
-  
-          <p class="modal-description">
-            <%= description %>
+        <% } %>
+      </div>
+
+      <!-- RIGHT: TEXT CONTENT -->
+      <div class="modal-info">
+        <h1><%= title %></h1>
+
+        <% if (typeof projectperiod !== "undefined" && projectperiod) { %>
+          <p class="modal-date">
+            <%= projectperiod %>
           </p>
-  
-          <p class="modal-tech">
-            <b>Programming Languages / Tools:</b><br>
-            <%= tech %>
-          </p>
-  
-          <div class="modal-palette">
-            <b>Colour Palette:</b>
-            <div class="palette-row">
-              <% palette.forEach(color => { %>
-                <span class="color-dot" style="background:<%= color %>"></span>
-              <% }) %>
-            </div>
+        <% } %>
+
+        <p class="modal-description">
+          <%= description %>
+        </p>
+
+        <p class="modal-tech">
+          <b>Programming Languages / Tools:</b><br>
+          <%= tech %>
+        </p>
+
+        <!-- COLOUR PALETTE -->
+        <div class="modal-palette">
+          <b>Colour Palette:</b>
+          <div class="palette-row">
+            <% palette.forEach(color => { %>
+              <span class="color-dot" style="background:<%= color %>"></span>
+            <% }) %>
           </div>
         </div>
-  
-      </div>
-  
-      <!-- BOTTOM: SNAPSHOTS -->
-      <div class="modal-gallery">
-        <% snapshots.forEach(img => { %>
-          <img src="<%= img %>" alt="project snapshot">
-        <% }) %>
+
+        <!-- OPTIONAL DOCUMENTATION LINK -->
+        <% if (typeof docs !== "undefined" && docs) { %>
+          <div class="modal-link">
+            <a
+              href="<%= docs %>"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="modal-link-btn docs-btn"
+            >
+              View Documentation →
+            </a>
+          </div>
+        <% } %>
+        
+        <!-- OPTIONAL DOCUMENTATION LINK -->
+        <% if (typeof figma !== "undefined" && figma) { %>
+          <div class="modal-link">
+            <a
+              href="<%= figma %>"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="modal-link-btn docs-btn"
+            >
+              View Figma →
+            </a>
+          </div>
+        <% } %>
+
+        <% if (typeof github !== "undefined" && github) { %>
+          <div class="modal-link">
+            <a
+              href="<%= github %>"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="modal-link-btn github-btn"
+            >
+              View GitHub →
+            </a>
+          </div>
+        <% } %>
+
+        <!-- OPTIONAL LINK BUTTON -->
+        <% if (typeof link !== "undefined" && link) { %>
+          <div class="modal-link">
+            <a
+              href="<%= link %>"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="modal-link-btn"
+            >
+              Visit Site →
+            </a>
+          </div>
+        <% } %>
+
       </div>
     </div>
+
+    <!-- BOTTOM: SNAPSHOTS -->
+    <div class="modal-gallery">
+      <% snapshots.forEach(img => { %>
+        <img src="<%= img %>" alt="Project snapshot">
+      <% }) %>
+    </div>
+
   </div>
-  
-<!-- FULLSCREEN IMAGE VIEWER -->
-<div id="lightbox" class="lightbox" onclick="closeLightbox(event)">
-  <button class="lightbox-close" onclick="closeLightbox()">×</button>
-
-  <button class="nav prev" onclick="prevImage()">‹</button>
-
-  <img id="lightbox-img" src="" />
-
-  <button class="nav next" onclick="nextImage()">›</button>
 </div>
