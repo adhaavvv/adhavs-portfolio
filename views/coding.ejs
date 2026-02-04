@@ -126,6 +126,30 @@
             </div>
 
             </section>
+
+            <section class="project-wallpaper" id="CA">
+              <%- include("components/projectCarousel", {
+                id: "CACarousel",
+                images: [
+                  "/images/CA1.png",
+                  "/images/CA2.png",
+                  "/images/CA3.png",
+                  "/images/CA4.png",
+                ],
+                modalTarget: "CAModal"
+              }) %>
+  
+              <div style="margin-left: 0px; color:#3c3d4b">
+                <h1 style="font-family: Kindergarten; font-size:70px; font-weight:bold">
+                    Card App Starter
+                </h1>
+                <p style="max-width:600px; font-size:20px;">
+                  This is a simple full-stack card application that allows users to register, log in, and manage cards through basic CRUD operations. Users can add cards using image URLs, as well as edit and delete existing cards, serving as a foundational project for understanding authentication, data handling, and core web app functionality.
+                </p>
+              </div>
+  
+            </section>
+
             <section class="project-wallpaper" id="gpa-tracker">
             <!-- GPA TRACKER CAROUSEL -->
             <%- include("components/projectCarousel", {
@@ -255,6 +279,38 @@
             ],
 
             github: "https://github.com/adhaavvv/CA1"
+          }) %>
+
+          <%- include("components/projectModal", {
+            id: "CAModal",
+
+            demoVideo: "/videos/CA.mkv",
+
+            title: "Card App Starter",
+
+            projectperiod: "January 2026",
+
+            description:
+              "A web application that helps students calculate module grades and projected GPA. Built with Node.js and EJS.",
+
+            tech:
+              "HTML, CSS, JavaScript, Node.js, EJS",
+
+            palette: [
+              "#0000ee",
+              "#551a8b",
+              "#efefef",
+            ],
+
+            github: "https://github.com/adhaavvv/onlineCardWebAppService1/tree/master",
+
+            snapshots: [
+              "/images/CA1.png",
+              "/images/CA2.png",
+              "/images/CA3.png",
+              "/images/CA4.png",
+            ],
+
           }) %>
 
           <!-- GPA TRACKER MODAL -->
