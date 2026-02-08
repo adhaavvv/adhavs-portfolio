@@ -120,6 +120,22 @@
 
       <div class="cert-grid__cards">
 
+        <div class="cert-card" role="button" tabindex="0" onclick="openCertModal('HackerRankJavaScriptIntermediateModal')">
+          <img src="/images/HackerRankJavaScriptIntermediate.jpg" alt="Certificate thumbnail">
+          <div class="cert-card__text">
+            <h4>JavaScript (Intermediate) Certificate</h4>
+            <p class="muted">HackerRank • 2026</p>
+          </div>
+        </div>
+
+        <div class="cert-card" role="button" tabindex="0" onclick="openCertModal('HackerRankCSSBasicModal')">
+          <img src="/images/HackerRankCSSBasic.jpg" alt="Certificate thumbnail">
+          <div class="cert-card__text">
+            <h4>CSS (Basic) Certificate</h4>
+            <p class="muted">HackerRank • 2026</p>
+          </div>
+        </div>
+
         <div class="cert-card" role="button" tabindex="0" onclick="openCertModal('MXModal')">
           <img src="/images/MX Cert.jpg" alt="Certificate thumbnail">
           <div class="cert-card__text">
@@ -247,6 +263,73 @@
   </section>
 
   <!-- CERT MODALS (simple) -->
+
+  <div id="HackerRankJavaScriptIntermediateModal" class="modal-overlay" onclick="closeCertModal(event)">
+    <div class="modal-box" onclick="event.stopPropagation()">
+      <button class="close-btn" onclick="closeCertModal()">×</button>
+      <div class="modal-content">
+        <div class="modal-video">
+            <div class="pdf-viewer" data-pdf="/pdf/HankerRank JavaScript Intermediate Certificate.pdf">
+              <div class="pdf-toolbar">
+                <button type="button" class="pdf-btn pdf-prev">‹</button>
+          
+                <span class="pdf-page">
+                  Page <span class="pdf-page-num">1</span> /
+                  <span class="pdf-page-count">?</span>
+                </span>
+          
+                <button type="button" class="pdf-btn pdf-next">›</button>
+              </div>
+          
+              <canvas class="pdf-canvas"></canvas>
+            </div>
+          </div>          
+        <div class="modal-info">
+          <h1>JavaScript (Intermediate)</h1>
+          <p class="modal-date">HackerRank • 2026</p>
+          <p class="modal-description">I earned this certificate by demonstrating intermediate proficiency in JavaScript concepts such as functions, scope, arrays, objects, and asynchronous logic. It strengthened my problem-solving skills and ability to write cleaner, more efficient code when building interactive and dynamic web applications.</p>
+
+          <div class="modal-link">
+            <a class="modal-link-btn" href="/pdf/HankerRank JavaScript Intermediate Certificate.pdf" target="_blank" rel="noopener noreferrer">Open PDF →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="HackerRankCSSBasicModal" class="modal-overlay" onclick="closeCertModal(event)">
+    <div class="modal-box" onclick="event.stopPropagation()">
+      <button class="close-btn" onclick="closeCertModal()">×</button>
+      <div class="modal-content">
+        <div class="modal-video">
+            <div class="pdf-viewer" data-pdf="/pdf/HankerRank CSS Basic Certificate.pdf">
+              <div class="pdf-toolbar">
+                <button type="button" class="pdf-btn pdf-prev">‹</button>
+          
+                <span class="pdf-page">
+                  Page <span class="pdf-page-num">1</span> /
+                  <span class="pdf-page-count">?</span>
+                </span>
+          
+                <button type="button" class="pdf-btn pdf-next">›</button>
+              </div>
+          
+              <canvas class="pdf-canvas"></canvas>
+            </div>
+          </div>          
+        <div class="modal-info">
+          <h1>CSS (Basic)</h1>
+          <p class="modal-date">HackerRank • 2026</p>
+          <p class="modal-description">I earned this certificate by demonstrating a foundational understanding of CSS, including layout styling, typography, positioning, and responsive design principles. It strengthened my ability to translate design concepts into clean, structured styles and reinforced best practices for building visually consistent web interfaces.</p>
+
+          <div class="modal-link">
+            <a class="modal-link-btn" href="/pdf/HankerRank CSS Basic Certificate.pdf" target="_blank" rel="noopener noreferrer">Open PDF →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div id="MXModal" class="modal-overlay" onclick="closeCertModal(event)">
     <div class="modal-box" onclick="event.stopPropagation()">
       <button class="close-btn" onclick="closeCertModal()">×</button>
