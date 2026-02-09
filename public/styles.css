@@ -55,6 +55,15 @@ body {
     font-family: "Kindergarten";
     font-size: 30px;
   }
+
+  .custom-nav .navbar-toggler {
+    border: none;
+    box-shadow: none;
+  }
+  
+  .custom-nav .navbar-toggler:focus {
+    box-shadow: none;
+  }
   
 .nav-item {
     color: #3c3d4b;
@@ -74,20 +83,23 @@ body {
   background-repeat: no-repeat;
 
   display: flex;
-  /* justify-content: center; */
+  justify-content: space-between;
   align-items: center;  /* center looks better than bottom-pinning */
-  /* gap: 40px; */
+  gap: 40px;
 
   padding: 60px 50px 0; 
   /* overflow: hidden; */
 }
 
 .paper-wallpaper-content {
+  flex: 1;
+  min-width: 0;
   color: #3c3d4b;
   padding-bottom: 60px;
 }
 
 .paper-wallpaper-image {
+  flex: 0 0 auto;
   align-self: stretch;     /* IMPORTANT: fills full hero height */
   display: flex;
   justify-content: center;
@@ -108,21 +120,63 @@ body {
 
 @media (max-width: 900px) {
   .paper-wallpaper {
-    height: auto;                /* let it grow naturally on mobile */
-    min-height: calc(100vh - var(--nav-h));
-    grid-template-columns: 1fr;
+    min-height: calc(100dvh - var(--nav-h));
+    height: auto;               /* ✅ allows hero to grow */
+    padding: 32px 18px 0;
+    gap: 14px;
+
+    display: flex;
+    flex-direction: column;
     align-items: center;
     text-align: center;
+
+    overflow: hidden;           /* ✅ prevents any tiny spill */
+  }
+
+  .paper-wallpaper-content {
+    order: 1;
+    width: 100%;
+    padding: 0;
+  }
+
+  /* ✅ Make text readable + not skinny */
+  .hero-desc {
+    font-size: 16px;
+    line-height: 1.6;
+    max-width: 520px;    /* stops super narrow paragraph */
+    margin: 10px auto 0; /* centers the paragraph */
+    padding: 0 6px;      /* tiny breathing room */
+  }
+
+  /* ✅ Keep the title image from shrinking weirdly */
+  .hero-title-img {
+    display: block;
+    width: min(360px, 90vw);
+    height: auto;
+    margin: 0 auto;
   }
 
   .paper-wallpaper-image {
+    order: 2;
+    width: 100%;
+    display: flex;
     justify-content: center;
+    align-items: flex-end;
+
+    margin-top: auto;           /* ✅ pushes image to bottom */
   }
 
   .hero-portrait {
-    width: min(520px, 90vw);
+    width: min(380px, 92vw);
+    height: auto;
+    margin: 0;
+
+    max-height: 46dvh;          /* ✅ stops it from becoming too tall */
+    object-fit: contain;
+    display: block;
   }
 }
+
 
 .design-wallpaper {
   height: 100vh;
@@ -327,8 +381,10 @@ body {
 
 
 /* Show dropdown on hover (desktop) */
-.navbar .dropdown:hover .dropdown-menu {
-  display: block;
+@media (min-width: 992px) {
+  .navbar .dropdown:hover .dropdown-menu {
+    display: block;
+  }
 }
 
 /* Optional: keep alignment nice */
@@ -693,45 +749,6 @@ h2 {
 
 /* ============ WHO I AM ============ */
 
-/* .about-section {
-  background-color: #f4f5e1;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 30px;
-}
-
-.about-text {
-  max-width: 600px;
-  font-size: 20px;
-}
-
-.about-image img {
-  width: 400px;
-  margin-right: 70px;
-  border-radius: 20px;
-}
-
-.about-cards{
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 16px;
-  margin-top: 18px;
-}
-
-.about-card{
-  background: rgba(255,255,255,0.6);
-  border: 1px solid rgba(60,61,75,0.15);
-  border-radius: 16px;
-  padding: 14px 16px;
-  transition: transform .15s ease, box-shadow .15s ease;
-}
-
-.about-card:hover{
-  transform: translateY(-4px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-} */
-
 .about-section{
   background: #f6f5df;
   padding: 100px 0;
@@ -825,6 +842,56 @@ h2 {
   padding: 8px 12px;
   font-size: 16px;
 }
+
+/* ✅ Mobile fixes for About section (and all sections padding) */
+@media (max-width: 900px) {
+
+  /* 1) Fix the huge desktop padding applied to ALL sections */
+  section:not(.paper-wallpaper) {
+    padding: 60px 18px; /* was 80px 100px */
+  }
+
+  /* 2) About section spacing */
+  .about-section {
+    padding: 70px 0; /* keep background full width, padding handled by container */
+  }
+
+  .about-container {
+    padding: 0 18px; /* was 0 40px */
+  }
+
+  /* 3) Stack text + image vertically */
+  .about-top {
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    text-align: center;
+  }
+
+  .about-text {
+    max-width: 520px;  /* keeps paragraph readable */
+  }
+
+  /* 4) Make image responsive so it doesn’t overflow */
+  .about-image img {
+    width: 100%;
+    max-width: 420px;  /* optional cap */
+    height: auto;
+  }
+
+  /* 5) Cards: switch from 3 columns to 1 column */
+  .about-cards {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    margin-top: 22px;
+  }
+
+  /* Optional: slightly smaller heading on mobile */
+  .about-text h2 {
+    font-size: 34px;
+  }
+}
+
 
 
 /* ========================
@@ -940,6 +1007,77 @@ h2 {
   color: #3c3d4b;
 }
 
+@media (max-width: 900px) {
+
+  /* Stack image + timeline (no more 420px desktop column) */
+  .journey-container{
+    grid-template-columns: 1fr;
+    gap: 22px;
+    padding: 0 18px; /* match your other mobile sections */
+    align-items: start;
+  }
+
+  /* Image becomes full-width on top */
+  .journey-left{
+    order: 1;
+  }
+  .journey-photo{
+    width: 100%;
+    max-height: 360px;
+    object-fit: cover;
+  }
+
+  .journey-right{
+    order: 2;
+  }
+
+  /* Reduce desktop heading size */
+  .journey-right h2{
+    font-size: 34px;
+    margin-bottom: 18px;
+    text-align: center;
+  }
+
+  /* Timeline: reduce the big desktop left padding */
+  .journey-timeline{
+    padding-left: 34px; /* was 90px */
+  }
+
+  /* Move the vertical line closer */
+  .journey-timeline::before{
+    left: 12px; /* was 32px */
+  }
+
+  /* Tighten spacing so cards fit nicely */
+  .journey-item{
+    gap: 14px;
+    margin-bottom: 16px;
+  }
+
+  /* Dot alignment for the smaller line spacing */
+  .journey-dot{
+    margin-left: -6px;  /* was -28px */
+    margin-top: 18px;
+    width: 18px;
+    height: 18px;
+    border-width: 3px;
+  }
+
+  /* Card should fill the width (remove desktop max limit feel) */
+  .journey-content{
+    max-width: 100%;
+    padding: 16px 16px;
+  }
+
+  .journey-content h4{
+    font-size: 20px;
+  }
+
+  .journey-content p{
+    font-size: 15px;
+    line-height: 1.65;
+  }
+}
 
 
 /* ============ SKILLS ============ */
@@ -949,6 +1087,12 @@ h2 {
   background: #f6f5df; /* match your paper theme */
   padding: 80px 0;
   text-align: center;
+}
+
+.skills-container{
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 40px;
 }
 
 .skills-title {
@@ -964,14 +1108,11 @@ h2 {
 }
 
 /* GRID */
-.skills-grid {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 0 40px;
-
+.skills-grid{
+  margin-top: 28px;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 28px;
+  gap: 22px;
 }
 
 /* TILE CARD */
@@ -1067,6 +1208,15 @@ h2 {
   opacity: 0.85;
 }
 
+@media (max-width: 900px){
+  .skills-container{ padding: 0 18px; }
+  .skills-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+}
+
+@media (max-width: 520px){
+  .skills-grid{ grid-template-columns: 1fr; }
+}
+
 @keyframes modalPop {
   from { transform: translateY(10px); opacity: 0; }
   to   { transform: translateY(0); opacity: 1; }
@@ -1152,15 +1302,88 @@ h2 {
 }
 
 /* make tiles feel clickable */
-.skill-tile {
+/* .skill-tile {
+  cursor: pointer;
+} */
+.skill-tile{
+  position: relative;
+  background: rgba(255,255,255,0.72);
+  border: 1px solid rgba(60,61,75,0.16);
+  border-radius: 22px;
+  padding: 22px 18px;
+  min-height: 190px;
+
+  display: grid;
+  place-items: center;
+  gap: 12px;
+
+  transition: transform .16s ease, box-shadow .16s ease, border-color .16s ease;
   cursor: pointer;
 }
+
+.skill-tile:hover{
+  transform: translateY(-4px);
+  border-color: rgba(60,61,75,0.28);
+  box-shadow: 0 16px 34px rgba(0,0,0,0.10);
+}
+
+.skill-tile:active{
+  transform: translateY(-2px);
+}
+
+.skill-tile:focus-visible{
+  outline: 3px solid rgba(60,61,75,0.28);
+  outline-offset: 4px;
+}
+
 
 .skill-tile:focus {
   outline: 3px solid rgba(60,61,75,0.25);
   outline-offset: 4px;
 }
 
+.skill-icon{
+  width: 92px;
+  height: 92px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.9);
+  border: 1px solid rgba(60,61,75,0.12);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.06);
+  display: grid;
+  place-items: center;
+}
+
+.skill-icon img{
+  width: 68px;
+  height: 68px;
+  object-fit: contain;
+}
+
+.skill-name{
+  font-size: 18px;
+  font-weight: 800;
+  color: #3c3d4b;
+  text-align: center;
+  line-height: 1.2;
+}
+
+/* optional tiny hint on hover (nice touch) */
+.skill-tile::after{
+  content: "View details";
+  position: absolute;
+  bottom: 14px;
+  font-size: 12px;
+  font-weight: 700;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: .16s ease;
+  color: rgba(60,61,75,0.7);
+}
+
+.skill-tile:hover::after{
+  opacity: 1;
+  transform: translateY(0);
+}
 
 
 /* ============ FUN FACTS ============ */
@@ -1252,6 +1475,68 @@ h2 {
   transform: translateY(-3px);
   box-shadow: 0 10px 20px rgba(0,0,0,0.15);
 }
+
+/* ✅ FUN FACTS — Mobile Fix */
+@media (max-width: 900px) {
+  .funfacts-container {
+    padding: 0 18px;           /* match your other mobile sections */
+  }
+
+  .funfacts-title {
+    font-size: 34px;
+  }
+
+  .funfacts-subtitle {
+    font-size: 15px;
+    margin-bottom: 26px;
+  }
+
+  /* 1 column layout so it breathes */
+  .funfacts-grid {
+    grid-template-columns: 1fr; /* was 2 columns */
+    gap: 16px;
+  }
+
+  /* cards less chunky */
+  .funfact-card {
+    padding: 18px 16px;
+    border-radius: 18px;
+  }
+
+  .funfact-icon {
+    font-size: 30px;
+    margin-bottom: 8px;
+  }
+
+  .funfact-card h4 {
+    font-size: 20px;
+    margin-bottom: 8px;
+  }
+
+  .funfact-card p {
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  /* Make image strip NOT force huge height */
+  .funfact-media {
+    gap: 10px;
+    margin-top: 14px;
+  }
+
+  .funfact-media img {
+    height: 95px;         /* was 120px */
+    border-radius: 12px;
+  }
+}
+
+/* Extra small phones: make posters fit nicely */
+@media (max-width: 520px) {
+  .funfact-media img {
+    height: 82px;
+  }
+}
+
 
 
 .modal-link {
