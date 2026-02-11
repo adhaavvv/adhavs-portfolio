@@ -88,7 +88,6 @@ body {
   gap: 40px;
 
   padding: 60px 50px 0; 
-  /* overflow: hidden; */
 }
 
 .paper-wallpaper-content {
@@ -177,113 +176,76 @@ body {
   }
 }
 
-
-.design-wallpaper {
-  height: 100vh;
-  background-image: url('/images/Design2.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-
-  display: flex;
-  align-items: flex-end;
-  padding-left: 0;
-  justify-content: center;
-
-  position: relative;
-  overflow: hidden;
-}
-
-.design-wallpaper > div {
-  text-align: center;
-  max-width: 1000px;
-  padding: 0 30px;
-  margin-bottom: -110px;
-}
-
-/* Ensure heading stays above the overlay */
-.design-wallpaper h1 {
-  position: relative;
-  z-index: 2;           /* bring text above shadow layer */
-  color: white;        /* ensure visibility */
-  margin-bottom: 20px; /* space from bottom */
-  font-size: 100px;
-}
-.design-wallpaper p {
-  position: relative;
-  z-index: 2;           /* bring text above shadow layer */
-  color: white;        /* ensure visibility */
-  margin-bottom: 60px; /* space from bottom */
-  font-size: 30px;
-}
-
-/* Bottom fade overlay */
-.design-wallpaper::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-
-  width: 100%;
-  height: 700px;
-
-  background: linear-gradient(
-    to top,
-    rgba(0, 0, 0, 1),
-    rgba(0, 0, 0, 0)
-  );
-
-  z-index: 1; /* place it BELOW the text */
-}
-
+/* Shared hero wallpaper rules (Coding + Design + Certs) */
+.coding-wallpaper,
+.design-wallpaper,
 .certs-wallpaper {
-  height: 100vh;
-  background-image: url('/images/Volunteer.png');
+  min-height: calc(100dvh - var(--nav-h));
+  height: auto;
+
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 
   display: flex;
-  align-items: flex-end;
-  padding-left: 0;
   justify-content: center;
+  align-items: flex-end;
 
   position: relative;
   overflow: hidden;
+
+  padding: 0; /* important: no section padding */
 }
 
+/* The text wrapper */
+.coding-wallpaper > div,
+.design-wallpaper > div,
 .certs-wallpaper > div {
   text-align: center;
   max-width: 1000px;
-  padding: 0 30px;
-  margin-bottom: -110px;
+  padding: 0 18px 42px; /* breathing room */
+  margin: 0;            /* REMOVE the -110px */
 }
 
-/* Ensure heading stays above the overlay */
+/* Responsive hero title */
+.coding-wallpaper h1,
+.design-wallpaper h1,
 .certs-wallpaper h1 {
   position: relative;
-  z-index: 2;           /* bring text above shadow layer */
-  color: white;        /* ensure visibility */
-  margin-bottom: 20px; /* space from bottom */
-  font-size: 100px;
-}
-.certs-wallpaper p {
-  position: relative;
-  z-index: 2;           /* bring text above shadow layer */
-  color: white;        /* ensure visibility */
-  margin-bottom: 60px; /* space from bottom */
-  font-size: 30px;
+  z-index: 2;
+  color: white;
+
+  margin: 0 0 12px;
+  line-height: 1.05;
+
+  font-size: clamp(42px, 7vw, 100px);
 }
 
-/* Bottom fade overlay */
+/* Responsive hero paragraph */
+.coding-wallpaper p,
+.design-wallpaper p,
+.certs-wallpaper p {
+  position: relative;
+  z-index: 2;
+  color: white;
+
+  margin: 0;
+  line-height: 1.55;
+
+  font-size: clamp(15px, 2.4vw, 28px);
+  max-width: 52ch; /* keeps paragraphs readable */
+  margin-inline: auto;
+}
+
+/* Bottom fade overlay - make it responsive instead of fixed 700px */
+.coding-wallpaper::after,
+.design-wallpaper::after,
 .certs-wallpaper::after {
   content: "";
   position: absolute;
-  bottom: 0;
-  left: 0;
+  inset: auto 0 0 0;
 
-  width: 100%;
-  height: 700px;
+  height: min(55%, 520px);
 
   background: linear-gradient(
     to top,
@@ -291,94 +253,55 @@ body {
     rgba(0, 0, 0, 0)
   );
 
-  z-index: 1; /* place it BELOW the text */
+  z-index: 1;
 }
-
 
 .coding-wallpaper {
-  height: 100vh;
   background-image: url('/images/Coding.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+}
+
+.design-wallpaper {
+  background-image: url('/images/Design2.png'); 
+}
+
+.certs-wallpaper {
+  background-image: url('/images/Volunteer.png');
+}
+
+.project-wallpaper,
+.project-wallpaper-2 {
+  min-height: 80vh;      /* keep the “big section” feel */
+  height: auto;          /* ✅ allow content to take space */
+  padding: 80px 50px;    /* add breathing room vertically */
 
   display: flex;
-  align-items: flex-end;
-  padding-left: 0;
+  align-items: center;
   justify-content: center;
 
-  position: relative;
-  overflow: hidden;
+  gap: 60px;
 }
 
-.coding-wallpaper > div {
-  text-align: center;
-  max-width: 1000px;
-  padding: 0 30px;
-  margin-bottom: -110px;
-}
+.project-wallpaper { background-color: #f4f5e1; }
+.project-wallpaper-2 { background-color: #ffebfd; }
 
-/* Ensure heading stays above the overlay */
-.coding-wallpaper h1 {
-  position: relative;
-  z-index: 2;           /* bring text above shadow layer */
-  color: white;        /* ensure visibility */
-  margin-bottom: 20px; /* space from bottom */
-  font-size: 100px;
-}
-.coding-wallpaper p {
-  position: relative;
-  z-index: 2;           /* bring text above shadow layer */
-  color: white;        /* ensure visibility */
-  margin-bottom: 60px; /* space from bottom */
-  font-size: 30px;
-}
-
-/* Bottom fade overlay */
-.coding-wallpaper::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-
-  width: 100%;
-  height: 700px;
-
-  background: linear-gradient(
-    to top,
-    rgba(0, 0, 0, 1),
-    rgba(0, 0, 0, 0)
-  );
-
-  z-index: 1; /* place it BELOW the text */
-}
-
-
-.project-wallpaper {
-  height: 80vh;
-  background-color: #f4f5e1;
-
-  display: flex;
-  align-items: center;        /* vertical center */
-  justify-content: center;    /* horizontal center */
-
-  gap: 60px;                  /* space between image & text */
-  padding: 0 50px;            /* equal left & right padding */
-}
-
+.project-wallpaper,
 .project-wallpaper-2 {
-  height: 80vh;
-  background-color: #ffebfd;
-
-  display: flex;
-  align-items: center;        /* vertical center */
-  justify-content: center;    /* horizontal center */
-
-  gap: 60px;                  /* space between image & text */
-  padding: 0 50px;            /* equal left & right padding */
+  color: #3c3d4b;
 }
 
 
+@media (max-width: 1100px) {
+  .project-wallpaper,
+  .project-wallpaper-2 {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .project-carousel {
+    flex: none;
+    max-width: 520px;
+  }
+}
 
 /* Show dropdown on hover (desktop) */
 @media (min-width: 992px) {
@@ -397,14 +320,102 @@ body {
   display: none !important;
 }
 
-.carousel-img {
+/* Carousel wrapper sizing so it doesn’t get too wide */
+.project-carousel {
+  flex: 0 0 560px;     /* fixed column size */
+  max-width: 560px;
+  width: 100%;
+}
+
+.project-carousel .carousel-item {
+  height: 450px;
+}
+
+.project-carousel .carousel-item > * {
+  height: 100%;
+}
+
+/* Force ALL carousel images inside project-carousel to behave */
+.project-carousel .carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+
+/* ✅ Desktop + mobile: frame lives on carousel */
+.project-carousel .carousel {
+  border: 6.5px solid #3c3d4b;
   border-radius: 25px;
-  border-style: solid;
-  border-width: 6.5px;
-  border-color: #3c3d4b;
-  /* box-shadow: 10px 10px 10px rgba(0,0,0,0.5); */
-  height: 450px;        /* adjust to your liking */
-  object-fit: cover;    /* keeps proportion while filling */
+  overflow: hidden;
+}
+
+/* ✅ Desktop + mobile: force a consistent slide window */
+.project-carousel .carousel-inner,
+.project-carousel .carousel-item {
+  height: 450px;
+}
+
+/* ✅ Desktop + mobile: image fills the window */
+.project-carousel .carousel-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+
+  border: 0 !important;
+  border-radius: 0 !important;
+}
+
+.project-info {
+  flex: 1 1 0;
+  min-width: 0;        /* prevents overflow in flex */
+}
+
+.project-info h1 {
+  font-family: Kindergarten;
+  font-size: clamp(40px, 5vw, 70px); /* ✅ scales down nicely */
+  font-weight: 800;
+  margin: 0 0 10px;
+}
+
+.project-info p {
+  font-size: clamp(15px, 2vw, 20px);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ✅ MOBILE: stack carousel on top, text below */
+@media (max-width: 900px) {
+  .project-wallpaper,
+  .project-wallpaper-2 {
+    min-height: auto;
+    padding: 60px 18px;
+    flex-direction: column;
+    text-align: center;
+    gap: 22px;
+  }
+
+  .project-info {
+    max-width: 520px;
+  }
+
+  .project-carousel {
+    flex: none;
+    max-width: 520px;
+  }
+
+  .project-carousel .carousel-inner,
+  .project-carousel .carousel-item {
+    height: clamp(220px, 55vw, 340px);
+  }
+
+  .project-carousel .carousel-item > img {
+    height: 100%;
+  }
 }
 
 /* CLICKABLE CARD */
@@ -524,11 +535,6 @@ body {
 
 /* ===== PDF VIEWER INSIDE MODAL ===== */
 .pdf-viewer {
-  /* width: 400px;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 12px; */
   width: 100%;
   height: 100%;               /* fill the left column height */
   display: flex;
@@ -537,10 +543,6 @@ body {
 }
 
 .pdf-toolbar {
-  /* display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 14px; */
   flex: 0 0 auto;
   display: flex;
   align-items: center;
@@ -570,11 +572,6 @@ body {
 }
 
 .pdf-canvas {
-  /* width: 100%;
-  height: auto;
-  max-height: calc(100% - 52px); room for toolbar */
-  /* border-radius: 18px;
-  background: white; */
   flex: 1 1 auto;
   /* IMPORTANT: don't force 100% width, let the canvas keep aspect ratio */
   width: auto;
@@ -735,10 +732,18 @@ body {
 
 /* ============ SHARED SECTION STYLE ============ */
 
-section:not(.paper-wallpaper) {
+section:not(:where(
+  .paper-wallpaper,
+  .coding-wallpaper,
+  .design-wallpaper,
+  .certs-wallpaper,
+  .project-wallpaper,
+  .project-wallpaper-2
+)) {
   padding: 80px 100px;
   color: #3c3d4b;
 }
+
 
 
 h2 {
@@ -847,8 +852,15 @@ h2 {
 @media (max-width: 900px) {
 
   /* 1) Fix the huge desktop padding applied to ALL sections */
-  section:not(.paper-wallpaper) {
-    padding: 60px 18px; /* was 80px 100px */
+  section:not(:where(
+    .paper-wallpaper,
+    .coding-wallpaper,
+    .design-wallpaper,
+    .certs-wallpaper,
+    .project-wallpaper,
+    .project-wallpaper-2
+  )) {
+    padding: 60px 18px;
   }
 
   /* 2) About section spacing */
@@ -1301,10 +1313,6 @@ h2 {
   line-height: 1.7;
 }
 
-/* make tiles feel clickable */
-/* .skill-tile {
-  cursor: pointer;
-} */
 .skill-tile{
   position: relative;
   background: rgba(255,255,255,0.72);

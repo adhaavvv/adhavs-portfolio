@@ -65,8 +65,10 @@
 
           <section class="project-wallpaper" id="study-sprint">
 
+            <div class="project-carousel">
+
             <%- include("components/projectCarousel", {
-              id: "codingCarousel",
+              id: "studySprintCarousel",
               images: [
                 "/images/StudySprint1.png",
                 "/images/StudySprint2.png",
@@ -79,23 +81,22 @@
               ],
               modalTarget: "StudySprintModal"
             }) %>
-          
-          
-            <div style="margin-left: 0px; color:#3c3d4b">
-              <h1 style="font-family: Kindergarten; font-size:70px; font-weight:bold">
-                  StudySprint
-              </h1>
-              <p style="max-width:600px; font-size:20px;">
-                A web app created to let students create study sessions and let students from around the school to join!
-              </p>
+
+            </div>
+
+            <div class="project-info">
+              <h1>StudySprint</h1>
+              <p>A web app created to let students create study sessions and let students from around the school to join!</p>
             </div>
 
             </section>
 
-          <section class="project-wallpaper" id="food-waste-saver">
+          <section class="project-wallpaper-2" id="food-waste-saver">
+            
+            <div class="project-carousel">
 
             <%- include("components/projectCarousel", {
-              id: "codingCarousel",
+              id: "foodWasteCarousel",
               images: [
                 "/images/FoodWasteSaver1.png",
                 "/images/FoodWasteSaver2.png",
@@ -104,22 +105,21 @@
               modalTarget: "FoodWasteSaverModal"
             }) %>
           
-          
-            <div style="margin-left: 0px; color:#3c3d4b">
-              <h1 style="font-family: Kindergarten; font-size:70px; font-weight:bold">
-                  FoodWasteSaver
-              </h1>
-              <p style="max-width:600px; font-size:20px;">
-                A mobile app created to help reduce food waste, and track calories!
-              </p>
+            </div>
+
+            <div class="project-info">
+              <h1>FoodWasteSaver</h1>
+              <p>A mobile app created to help reduce food waste, and track calories!</p>
             </div>
 
             </section>
   
           <section class="project-wallpaper" id="macro-mate">
 
+            <div class="project-carousel">
+
             <%- include("components/projectCarousel", {
-              id: "codingCarousel",
+              id: "macroMateCarousel",
               images: [
                 "/images/macromate.png",
                 "/images/macromate2.png",
@@ -128,21 +128,21 @@
               modalTarget: "codingModal"
             }) %>
           
-          
-            <div style="margin-left: 0px; color:#3c3d4b">
-              <h1 style="font-family: Kindergarten; font-size:70px; font-weight:bold">
-                  MacroMate
-              </h1>
-              <p style="max-width:600px; font-size:20px;">
-                A BMI calculator and calorie-allocation app that lets users log daily food intake with optional photo entries.
-              </p>
+            </div>
+
+            <div class="project-info">
+              <h1>MacroMate</h1>
+              <p>A BMI calculator and calorie-allocation app that lets users log daily food intake with optional photo entries.</p>
             </div>
 
             </section>
 
-            <section class="project-wallpaper" id="CA">
+            <section class="project-wallpaper-2" id="CA">
+
+              <div class="project-carousel">
+
               <%- include("components/projectCarousel", {
-                id: "CACarousel",
+                id: "caCarousel",
                 images: [
                   "/images/CA1.png",
                   "/images/CA2.png",
@@ -151,20 +151,20 @@
                 ],
                 modalTarget: "CAModal"
               }) %>
+
+              </div>
   
-              <div style="margin-left: 0px; color:#3c3d4b">
-                <h1 style="font-family: Kindergarten; font-size:70px; font-weight:bold">
-                    Card App Starter
-                </h1>
-                <p style="max-width:600px; font-size:20px;">
-                  This is a simple full-stack card application that allows users to register, log in, and manage cards through basic CRUD operations. Users can add cards using image URLs, as well as edit and delete existing cards, serving as a foundational project for understanding authentication, data handling, and core web app functionality.
-                </p>
+              <div class="project-info">
+                <h1>Card App Starter</h1>
+                <p>This is a simple full-stack card application that allows users to register, log in, and manage cards through basic CRUD operations. Users can add cards using image URLs, as well as edit and delete existing cards, serving as a foundational project for understanding authentication, data handling, and core web app functionality.</p>
               </div>
   
             </section>
 
             <section class="project-wallpaper" id="gpa-tracker">
             <!-- GPA TRACKER CAROUSEL -->
+            <div class="project-carousel">
+
             <%- include("components/projectCarousel", {
               id: "gpaCarousel",
               images: [
@@ -175,14 +175,13 @@
               modalTarget: "gpaModal"
             }) %>
 
-            <div style="margin-left: 0px; color:#3c3d4b">
-              <h1 style="font-family: Kindergarten; font-size:70px; font-weight:bold">
-                  GPA Tracker
-              </h1>
-              <p style="max-width:600px; font-size:20px;">
-                A simple GPA tracking web app built with Node.js and EJS.
-              </p>
             </div>
+
+            <div class="project-info">
+              <h1>GPA Tracker</h1>
+              <p>A simple GPA tracking web app built with Node.js and EJS.</p>
+            </div>
+            
 
           </section>
 
