@@ -1766,6 +1766,23 @@ h2 {
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 22px;
 }
+
+/* ✅ Fix: Certificates heading color + centering */
+.cert-grid {
+  color: #3c3d4b;
+}
+
+.cert-grid__container {
+  text-align: center;
+}
+
+/* Optional but nice: ensure these always stay dark */
+.cert-grid h2,
+.cert-grid p,
+.cert-card__text h4,
+.cert-card__text p {
+  color: #3c3d4b;
+}
 .cert-card{
   background: rgba(255,255,255,0.65);
   border: 1px solid rgba(60,61,75,0.15);
