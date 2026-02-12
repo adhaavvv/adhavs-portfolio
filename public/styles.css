@@ -1783,6 +1783,7 @@ h2 {
 .cert-card__text p {
   color: #3c3d4b;
 }
+
 .cert-card{
   background: rgba(255,255,255,0.65);
   border: 1px solid rgba(60,61,75,0.15);
@@ -1805,6 +1806,47 @@ h2 {
   padding: 14px 14px 16px;
 }
 .muted{ opacity: .75; margin: 0; }
+
+/* ✅ CERT GRID — Mobile Friendly */
+@media (max-width: 900px) {
+  .cert-grid__container {
+    padding: 0 18px; /* match your other mobile sections */
+  }
+
+  .cert-grid__cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr)); /* 3 → 2 */
+    gap: 14px;
+  }
+
+  .cert-card img {
+    height: 140px; /* slightly shorter */
+  }
+
+  .cert-card__text {
+    padding: 12px 12px 14px;
+  }
+
+  .cert-card__text h4 {
+    font-size: 16px;
+    line-height: 1.25;
+    margin: 0 0 6px;
+  }
+
+  .cert-card__text p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 520px) {
+  .cert-grid__cards {
+    grid-template-columns: 1fr; /* 2 → 1 */
+  }
+
+  .cert-card img {
+    height: 160px; /* single column can be taller */
+  }
+}
+
 
 /* CONTACT SECTION */
 .contact-section {
