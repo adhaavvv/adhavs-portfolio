@@ -16,6 +16,7 @@
 
 html, body {
   height: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -738,13 +739,13 @@ section:not(:where(
   .design-wallpaper,
   .certs-wallpaper,
   .project-wallpaper,
-  .project-wallpaper-2
+  .project-wallpaper-2,
+  .cert-journey,
+  .cert-grid
 )) {
   padding: 80px 100px;
   color: #3c3d4b;
 }
-
-
 
 h2 {
   font-family: Kindergarten;
@@ -858,7 +859,9 @@ h2 {
     .design-wallpaper,
     .certs-wallpaper,
     .project-wallpaper,
-    .project-wallpaper-2
+    .project-wallpaper-2,
+    .cert-journey,
+    .cert-grid
   )) {
     padding: 60px 18px;
   }
@@ -1570,33 +1573,65 @@ h2 {
 }
 
 /* --- CERT JOURNEY --- */
+
+.cert-journey,
+.cert-journey__container,
+.cert-journey__left,
+.cert-journey__right {
+  max-width: 100%;
+  min-width: 0;
+}
+
+.cert-journey {
+  overflow-x: hidden; /* clips anything that tries to spill */
+}
+
+/* Ensure carousel never exceeds container width */
+#certJourneyCarousel,
+#certJourneyCarousel .carousel-inner,
+#certJourneyCarousel .carousel-item,
+#certJourneyCarousel img {
+  max-width: 100%;
+}
+
+#certJourneyCarousel img{
+  width: 100%;
+  display: block;
+}
+
 .cert-journey{
-  background:#ffebfd; /* match your pink section */
+  background:#ffebfd;
   padding: 90px 0;
 }
+
 .cert-journey__container{
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 40px;
+
   display: grid;
   grid-template-columns: 520px 1fr;
-  gap: 60px;
+  grid-template-rows: auto 1fr;
+  gap: 28px 60px;
   align-items: center;
 }
-.cert-journey__photo{
-  width: 100%;
-  border-radius: 24px;
-  object-fit: cover;
-  border: 1px solid rgba(60, 61, 75, 0.15);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
-  transition: opacity 0.18s ease;
-}
-.cert-journey__fade{ opacity: 0.25; }
 
+/* ✅ Title spans across both columns */
+.cert-journey__title{
+  grid-column: 1 / -1;
+  margin: 0 0 6px;
+  text-align: center;
+  font-family: Kindergarten;
+  font-size: 42px;
+  color: #3c3d4b;
+}
+
+/* cards */
 .cert-journey__list{
   display: grid;
   gap: 16px;
 }
+
 .cert-journey__card{
   text-align: left;
   background: rgba(255,255,255,0.75);
@@ -1606,13 +1641,109 @@ h2 {
   cursor: pointer;
   transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
 }
+
 .cert-journey__card:hover{
   transform: translateY(-3px);
   box-shadow: 0 12px 28px rgba(0,0,0,0.10);
 }
+
 .cert-journey__card.is-active{
   border-color: rgba(60,61,75,0.35);
   box-shadow: 0 14px 32px rgba(0,0,0,0.12);
+}
+
+#certJourneyCarousel{
+  width: 100%;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid rgba(60, 61, 75, 0.15);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+}
+
+/* Lock the carousel viewport so nothing can "spill" */
+#certJourneyCarousel .carousel-inner,
+#certJourneyCarousel .carousel-item {
+  height: 420px;
+}
+
+.cert-journey__slide{
+  height: 420px;
+  object-fit: cover;
+  display: block;
+}
+
+#certJourneyCarousel .cert-journey__slide {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ✅ MOBILE */
+@media (max-width: 900px){
+  .cert-journey__container{
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 18px;
+    padding: 0 18px;
+    align-items: start;
+  }
+
+  .cert-journey__title{
+    font-size: 34px;
+  }
+
+  /* IMPORTANT: don't re-force 420px */
+  .cert-journey__slide{
+    height: 100%;
+  }
+
+  #certJourneyCarousel{
+    border-radius: 20px;
+  }
+
+  #certJourneyCarousel .carousel-inner,
+  #certJourneyCarousel .carousel-item{
+    height: clamp(220px, 55vw, 340px);
+  }
+
+  /* ✅ horizontal scroller that does NOT widen the page */
+  .cert-journey__list{
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    gap: 12px;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+
+    padding: 6px 2px 10px;
+
+    /* important */
+    min-width: 0;
+  }
+
+  /* ✅ Make each card fit nicely on mobile */
+  .cert-journey__card{
+    flex: 0 0 85%;
+    max-width: 85%;
+    min-width: min(240px, 85vw); /* still readable on small phones */
+    scroll-snap-align: start;
+    padding: 14px;
+  }
+
+  .cert-journey__card h4{
+    font-size: 18px;
+    margin-bottom: 6px;
+  }
+
+  .cert-journey__card p{
+    font-size: 14.5px;
+    line-height: 1.6;
+  }
 }
 
 /* --- CERT GRID --- */
@@ -1657,23 +1788,6 @@ h2 {
   padding: 14px 14px 16px;
 }
 .muted{ opacity: .75; margin: 0; }
-
-#certJourneyCarousel {
-  width: 100%;
-  border-radius: 24px;
-  overflow: hidden;
-  border: 1px solid rgba(60, 61, 75, 0.15);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
-}
-
-/* consistent height like your other media blocks */
-.cert-journey__slide {
-  height: 420px;          /* tweak */
-  object-fit: cover;      /* cover = nice aesthetic */
-  border-radius: 24px;
-}
-
-
 
 /* CONTACT SECTION */
 .contact-section {
