@@ -37,6 +37,10 @@ app.get('/contact', (req, res) => {
 app.post("/contact", async (req, res) => {
   const { name, email, message } = req.body;
 
+  console.log("BODY:", req.body);
+  console.log("ENV email exists:", !!process.env.CONTACT_EMAIL);
+  console.log("ENV pass exists:", !!process.env.CONTACT_EMAIL_PASS);
+
   try {
     const transporter = nodemailer.createTransport({
       service: "gmail",

@@ -108,7 +108,7 @@
         </aside>
   
         <!-- RIGHT: Form -->
-        <form action="/contact" method="POST" class="contact-form">
+        <form id="contactForm" class="contact-form">
           <div class="form-group">
             <label>Name</label>
             <input type="text" name="name" required />
@@ -125,33 +125,46 @@
           </div>
         
           <button type="submit" class="contact-btn">Send Message →</button>
-        </form>        
+        
+          <p id="contactStatus" class="muted" style="margin-top:12px;"></p>
+        </form>
+           
         
       </div>
   
     </div>
   </section>
   <script>
-    function sendEmail() {
-      const name = document.getElementById("name").value;
-      const email = document.getElementById("email").value;
-      const message = document.getElementById("message").value;
+    const form = document.getElementById("contactForm");
+    const statusEl = document.getElementById("contactStatus");
   
-      const subject = encodeURIComponent("Portfolio Contact from " + name);
-      const body = encodeURIComponent(
-        "Name: " + name + "\n" +
-        "Email: " + email + "\n\n" +
-        message
-      );
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      statusEl.textContent = "Sending...";
   
-      window.location.href =
-        "mailto:adhavanbalagan@gmail.com?subject=" +
-        subject +
-        "&body=" +
-        body;
-    }
+      const formData = new FormData(form);
+      const payload = Object.fromEntries(formData.entries());
+  
+      try {
+        const res = await fetch("/api/contact", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+        });
+  
+        const data = await res.json();
+  
+        if (data.ok) {
+          statusEl.textContent = "✅ Message sent! Thank you.";
+          form.reset();
+        } else {
+          statusEl.textContent = "❌ Failed to send. Please email me instead.";
+        }
+      } catch (err) {
+        statusEl.textContent = "❌ Failed to send. Please email me instead.";
+      }
+    });
   </script>
-  
 
 </body>
 </html>
